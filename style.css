@@ -1,0 +1,305 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+ 
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+
+/*
+Polar Night
+nord0  #2e3440
+nord1  #3b4252
+nord2  #434c5e
+nord3  #4c566a
+Snow Storm
+nord4  #d8dee9
+nord5  #e5e9f0
+nord6  #eceff4
+Frost
+nord7  #8fbcbb
+nord8  #88c0d0
+nord9  #81a1c1
+nord10 #5e81ac
+Aurora
+nord11 #bf616a
+nord12 #d08770
+nord13 #ebcb8b
+nord14 #a3be8c
+nord15 #b48ead
+*/
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+ 
+/* Reset all styles */
+
+* {
+    color: #eceff4;
+    border: 0;
+    border-radius: 0;
+    padding: 0 0;
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", "Font Awesome";
+    font-weight: bold;
+    font-size: 12px;
+/*
+    padding:1px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-top:1px;
+*/
+   }
+   
+/*
+window#icons{
+	padding:10px;
+}
+*/
+window#waybar.empty #window {
+	/*background-color: transparent;*/
+}
+window#waybar {
+    /*background:rgba (0, 0, 0, 0.5);*/
+    background:rgba (60, 60, 60, 0.4);
+    border-bottom: 0px solid #9DB8C1;
+    border-radius: 20px; 
+    margin-top: 2px;
+    /*box-shadow: 10px 10px white;*/
+    /*window#waybar  to follow gtk theme....{*/
+/*
+    background: @theme_base_color;
+    border-bottom: 1px solid @unfocused_borders;
+    color: @theme_text_color;
+*/
+}
+
+tooltip {
+    background: rgba(0, 0, 0, 0.575);
+    opacity: 0.8;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #9DB8C1;
+}
+tooltip label {
+  color: red;
+}
+
+#workspaces button {
+/*
+    border: 0px;
+    color: lightblue;
+    border-color: #886e99;
+    border-style: solid;
+    margin-left:5px;
+    margin-right:5px;*/
+    background: rgba(23, 23, 23, 0.575);
+    margin: 2px 2px;
+    padding: 0px 4px;
+    border-radius:10px;
+}
+#workspaces button.active {
+	background:black;
+    border-color: #cfa1fc;
+    color: #223353;
+}
+/*extra added...*/
+#workspaces button.focused {
+    background: #64727D;
+    border-bottom: 2px solid white;
+}
+#workspaces button:hover {
+    background: #81111b;
+    color: #4dd6f4;
+    border-radius: 10px;
+}
+
+
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#taskbar button {
+    box-shadow: none;
+	text-shadow: none;
+    padding: 0px;
+    border-radius: 9px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    /*
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+    */
+}
+
+#taskbar button.active {
+    background: #324857;
+    margin-left: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 3px;
+   /* 
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    */
+}
+
+
+#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-pacman ,#custom-network_traffic,#custom-weather{
+/*
+    background: #000000 ;
+*/
+    background-color: rgba(0,0,0, 0.9);
+    opacity: 0.8;
+    padding: 1px 5px;
+    /* margin: 3px 0px; */
+    margin: 2px;
+/*
+    margin-top: 10px;
+*/
+    border: 0px dotted #c198f5;
+    border-radius:10px;
+    
+    /*old*/
+/*
+    padding: 0 3px;
+*/
+    /*border-bottom: 2px;*/
+    /*border-top: 1px;*/
+    border-style: dashed;
+}
+ 
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+ 
+#clock {
+ color:#a3ee8c;
+}
+
+#backlight {
+    color: #fcfcbb;
+}
+
+#battery {
+    color: #fddef9
+}
+
+#battery.charging {
+    color: #51a1ff;
+}
+
+@keyframes blink {
+    to {
+        color: #4c566a;
+        background-color: #eceff4;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background: #bf616a;
+    color: #eceff4;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    color:#49ff9e ;
+    /*padding-top:4px;*/
+}
+
+#memory {
+    color: #f9a65b;
+}
+
+#network.disabled {
+    color:#bf616a;
+}
+
+#network{
+    color:#a3be8c;
+}
+
+#network.disconnected {
+    color: #bf616a;
+}
+
+#pulseaudio {
+    color: #e45edd;
+}
+
+#pulseaudio.muted {
+    color: #3b4252;
+}
+
+#temperature {
+    color: #8fbcbb;
+}
+
+#temperature.critical {
+    color: #bf616a;
+}
+
+#idle_inhibitor {
+   color: #ebcb8b;
+}
+
+#tray {/*edited*/
+	border-radius: 10px;
+}
+
+#custom-launcher,#custom-power{
+/*
+    border-style: hidden;
+*/
+	background: #111111;
+	opacity: 0.9;
+	padding: 4px 3px;
+	/*border-left: 2px;*/
+	border:0px  /*#f3f4f9*/#9087f0;
+	border-radius:10px;
+	border-style: solid;
+    margin:2px;
+}
+
+
+#custom-launcher{
+	/*border-left:3px;
+	border-top:3px;*/
+	margin-left:4px;
+}
+#custom-power{
+	/*border-right:3px;
+	border-top:3px;*/
+	margin-right:4px;
+}
+
+
+#window{
+    margin-top:1px;  
+    padding-top:4px;
+    border-style: solid;
+    border-radius: 10px;
+}    
+#custom-keyboard-layout{
+   color:#dff770;
+}   
+#custom-network_traffic{
+   color:#90f7f0;
+}
+
+
