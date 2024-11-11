@@ -1,0 +1,95 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "insert end",
+        "command": "code-runner.run"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-code-runner.run"
+    },
+    {
+        "key": "insert delete",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "alt+meta+backspace",
+        "command": "bracketeer.removeQuotes"
+    },
+    {
+        "key": "ctrl+shift+alt+u",
+        "command": "bracketeer.changeBracketsTo"
+    },
+    {
+        "key": "ctrl+meta+s",
+        "command": "bracketeer.selectBracketContent"
+    },
+    {
+        "key": "ctrl+meta+q",
+        "command": "bracketeer.selectQuotesContent"
+    },
+    {
+        "key": "ctrl+shift+alt+k",
+        "command": "bracketeer.swapBrackets"
+    },
+    {
+        "key": "ctrl+shift+alt+;",
+        "command": "bracketeer.swapQuotes"
+    },
+    {
+        "key": "alt+meta+delete",
+        "command": "bracketeer.removeBrackets"
+    },
+    {
+        "key": "ctrl+shift+alt+i",
+        "command": "-bracketeer.removeBrackets"
+    },
+    {
+        "key": "ctrl+shift+alt+h",
+        "command": "-bracketeer.selectBracketContent"
+    },
+    {
+        "key": "meta+/",
+        "command": "vscode-chatgpt.findProblems"
+    },
+    {
+        "key": "meta+'",
+        "command": "vscode-chatgpt.view.focus"
+    },
+    {
+        "key": "meta+]",
+        "command": "vscode-chatgpt.freeText"
+    },
+    {
+        "key": "ctrl+alt+meta+n",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "welcome.showNewFileEntries"
+    },
+    {
+        "key": "ctrl+alt+meta+n",
+        "command": "-welcome.showNewFileEntries"
+    },
+    {
+        "key": "ctrl+n space",
+        "command": "explorer.newFolder"
+    },
+    {
+        "key": "ctrl+n n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+n m",
+        "command": "workbench.action.files.newFile"
+    },
+    {
+        "key": "alt+w alt+w",
+        "command": "workbench.action.copyEditorToNewWindow"
+    }
+]

@@ -1,0 +1,62 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"<": {
+		"prefix": "<",
+		"body": " <<  ",
+		"description": "<< auto"
+	},
+	"cou": {
+		"prefix": "cou",
+		"body": "cout << \"\\n$1\";",
+		"description": "cout auto"
+	},
+	"ci": {
+		"prefix": "ci",
+		"body": "cin >> $1;",
+		"description": "cin auto"
+	},
+	"couend": {
+		"prefix": "cound",
+		"body": "cout << $1 << endl;",
+		"description": "cout auto"
+	},
+	"coun": {
+		"prefix": "coun",
+		"body": "cout <<\"$1\"<<'\\n';",
+		"description": "coutn auto"
+	},
+	"include header": {
+		"prefix": "#includeioster",
+		"body": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n\t$1\n\n\treturn 0;\n}",
+		"description": "header auto"
+	},
+	"forauto": {
+		"prefix": "foauto",
+		"body": [
+			"for(${int} ${i} = $2; ${i} < ${size}; ${i}++)\n\t$0"
+		],
+		"description": "for auto"
+	},
+	"ifauto": {
+		"prefix": "ifauto",
+		"body": "if($1)\n\t$4",
+		"description": "if auto"
+	},
+	"caseauto": {
+		"prefix": "casauto",
+		"body": "case $1:\n\t$4\n\tbreak;",
+		"description": "case auto"
+	},
+}
