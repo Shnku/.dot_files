@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "args": [
+                "-d",
+                "chrome"
+            ],
+            "env": {
+                "CHROME_EXECUTABLE": "/usr/bin/google-chrome-stable"
+            }
+        }
+    ]
+}
