@@ -17,5 +17,5 @@
 #xfce-mcs-manager &
 
 polybar &
-plank &
 nitrogen --restore &
+plank &
