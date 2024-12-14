@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Bazik_Dark_Green</name>
+    <name>purple-mac.tar</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -331,7 +331,7 @@
         <command>rofi -show drun -show-icons</command>
       </action>
     </keybind>
-     <!-- Brightness Control -->
+    <!-- Brightness Control -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>brightnessctl set +5%</command>
@@ -358,8 +358,6 @@
         <command>pactl set-sink-volume @DEFAULT_SINK@ 0%</command>
       </action>
     </keybind>
-    
-    
     <!-- Media Controls -->
     <keybind key="XF86AudioStop">
       <action name="Execute">
