@@ -1,0 +1,25 @@
+//@theme "/usr/share/rofi/themes/Monokai.rasi"
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+configuration {
+    font: "monospace 12";
+    padding: 10;
+    border: 5;
+    border-color: #444;
+    background: #222;
+    foreground: #aaa;
+    selected-background: #005577;
+    selected-foreground: #999;
+    show-icons: true; /* Disable icons if not needed */
+}
+
+* {
+    border-radius: 5;
+}
+
+window {
+    background: #333; /* Background for the window switcher */
+    border: 1; /* Border for the window switcher */
+    border-color: #444; /* Border color for the window switcher */
+}
+
