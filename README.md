@@ -10,7 +10,7 @@ Here is screenshots showcasing my desktop environment and configurations:
 
 ### Desktop Environment
 
-![Desktop Screenshot](screenshot/2024-12-24_20-27.png)
+![Desktop Screenshot](screenshot/2025-03-03_22-21.png)
 *This screenshot shows my customized Openbox desktop environment with Polybar at the top and Plank dock at the bottom.*
 **This is OpenBox on fedora**
 
