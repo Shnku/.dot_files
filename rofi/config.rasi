@@ -1,5 +1,5 @@
 //@theme "/usr/share/rofi/themes/Monokai.rasi"
-@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
 
 configuration {
     font: "monospace 12";
@@ -23,3 +23,5 @@ window {
     border-color: #444; /* Border color for the window switcher */
 }
 
+
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
