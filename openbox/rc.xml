@@ -45,7 +45,7 @@
   </placement>
   <!-- Theme -->
   <theme>
-    <name>Neon_Knights_Green</name>
+    <name>SBColor_round</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
