@@ -32,6 +32,7 @@ fi
 
 ## Enable power management
 # xfce4-power-manager &
+lxqt-powermanagement &
 
 ## Start Compositing Manager
 exec picom &
@@ -53,7 +54,7 @@ exec plank &
 
 ## enable clipboard manager..
 copyq &
-syndaemon -i 0.5 -t -K -R -d &
+# syndaemon -i 0.5 -t -K -R -d &
 ## Enable Super Keys For Menu
 # ksuperkey -e 'Super_L=Alt_L|F1' &
 # ksuperkey -e 'Super_R=Alt_L|F1' &
@@ -66,4 +67,5 @@ nm-applet --indicator &
 
 ## User Friendly Bluetooth Menu
 blueman-applet &
+kdeconnect-indicator &
 
