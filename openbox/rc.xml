@@ -45,7 +45,7 @@
   </placement>
   <!-- Theme -->
   <theme>
-    <name>SBColor_round</name>
+    <name>MacOS-Dark</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -370,6 +370,9 @@
         <command>kfmclient openProfile filemanagement</command>
       </action>
     </keybind>
+    <keybind key="W-Escape">
+      <action name="Iconify"/>
+    </keybind>
     <!-- launch rofi -->
     <keybind key="W-space">
       <action name="Execute">
@@ -438,6 +441,11 @@
     <keybind key="Print">
       <action name="Execute">
         <command>flameshot gui</command>
+      </action>
+    </keybind>
+    <keybind key="W-Print">
+      <action name="Execute">
+        <command>flameshot screen</command>
       </action>
     </keybind>
   </keyboard>
@@ -804,6 +812,9 @@
   </menu>
   <!-- ################################ Applications Rules ################################ -->
   <applications>
+    <application class="polybar">
+      <command>~/.config/openbox/autostart.sh</command>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
