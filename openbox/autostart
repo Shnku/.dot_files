@@ -17,7 +17,8 @@
 #xfce-mcs-manager &
 
 ## Kill if already running
-# killall -9 xfsettingsd picom polybar mpd dunst ksuperkey xfce4-power-manager
+#killall -9 xfsettingsd picom polybar mpd dunst ksuperkey xfce4-power-manager
+killall -9  picom polybar mpd dunst plank lxqt-powermanagement copyq kdeconnect-indicator blueman-applet
 
 ## Restore Wallpaper
 nitrogen --restore
@@ -38,7 +39,6 @@ lxqt-powermanagement &
 exec picom &
 
 ## Launch Polybar or Tint2
-bash ~/.config/polybar/launch.sh
 
 ## Notification Daemon
 exec dunst &
@@ -54,6 +54,7 @@ exec plank &
 
 ## enable clipboard manager..
 copyq &
+
 # syndaemon -i 0.5 -t -K -R -d &
 ## Enable Super Keys For Menu
 # ksuperkey -e 'Super_L=Alt_L|F1' &
@@ -66,6 +67,9 @@ copyq &
 nm-applet --indicator &
 
 ## User Friendly Bluetooth Menu
-blueman-applet &
+#blueman-applet &
+
+## enable kde connect applet
 kdeconnect-indicator &
 
+bash ~/.config/polybar/launch.sh
