@@ -373,6 +373,9 @@
     <keybind key="W-Escape">
       <action name="Iconify"/>
     </keybind>
+    <keybind key="A-S-d">
+      <action name="ToggleDecorations"/>
+    </keybind>
     <!-- launch rofi -->
     <keybind key="W-space">
       <action name="Execute">
