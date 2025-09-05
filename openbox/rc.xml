@@ -45,7 +45,7 @@
   </placement>
   <!-- Theme -->
   <theme>
-    <name>MacOS-Dark</name>
+    <name>Fresh-Theme</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -190,7 +190,7 @@
     <rebindOnMappingNotify>yes</rebindOnMappingNotify>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="C-A-Left">
+    <!-- <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>no</wrap>
@@ -201,7 +201,7 @@
         <to>right</to>
         <wrap>no</wrap>
       </action>
-    </keybind>
+    </keybind> -->
     <keybind key="C-A-Up">
       <action name="GoToDesktop">
         <to>up</to>
@@ -361,17 +361,21 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="W-e">
+    <!-- toggle clipboard copyq -->
+    <keybind key="W-v">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Konqueror</name>
+          <name>copyq</name>
         </startupnotify>
-        <command>kfmclient openProfile filemanagement</command>
+        <command>copyq toggle</command>
       </action>
     </keybind>
     <keybind key="W-Escape">
       <action name="Iconify"/>
+    </keybind>
+    <keybind key="A-S-d">
+      <action name="ToggleDecorations"/>
     </keybind>
     <!-- launch rofi -->
     <keybind key="W-space">
@@ -380,7 +384,7 @@
       </action>
     </keybind>
     <keybind key="A-space">
-      <action name="Eecute">
+      <action name="Execute">
         <command>rofi -show drun</command>
       </action>
     </keybind>
@@ -440,7 +444,7 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>flameshot gui</command>
+        <command>scrot</command>
       </action>
     </keybind>
     <keybind key="W-Print">
@@ -448,6 +452,15 @@
         <command>flameshot screen</command>
       </action>
     </keybind>
+    <keybind key="W-t">           
+	  <action name="Execute">
+		<startupnotify>
+		  <enabled>true</enabled>
+		  <name>Terminal</name>
+		</startupnotify>
+		<command>qterminal</command>
+	  </action>               
+   </keybind> 
   </keyboard>
   <!-- ################################ Mouse Settings ################################ -->
   <mouse>

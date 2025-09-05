@@ -1,0 +1,278 @@
+## FIRST LINE/ROW: Info & Status
+
+# format = """
+# [░▒▓](#a3aed2)\
+# [  ](bg:#a3aed2 fg:#090c0c)\
+# [](bg:#769ff0 fg:#a3aed2)\
+# $directory\
+# [](fg:#769ff0 bg:#394260)\
+# $git_branch\
+# $git_status\
+# [](fg:#394260 bg:#212736)\
+# $nodejs\
+# $rust\
+# $golang\
+# $php\
+# [](fg:#212736 bg:#1d2230)\
+# $time\
+# [ ](fg:#1d2230)\
+# \n$character"""
+
+# First param ─┌
+[username]
+format = "[░  $user]($style)@"
+show_always = true
+style_root = "bold red"
+style_user = "bold purple"
+
+# Second param
+[hostname]
+disabled = false
+format = "[$hostname]($style) in "
+ssh_only = false
+ssh_symbol = " "
+style = "bold yellow"
+trim_at = "-"
+
+# Third param
+[directory]
+style = "purple"
+truncate_to_repo = true
+# truncation_length = 0
+truncation_symbol = "repo: "
+read_only = " 󰌾"
+# [directory]
+# style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 3
+# truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+# Fourth param
+[sudo]
+disabled = false
+
+# Before all the version info (python, nodejs, php, etc.)
+[git_branch]
+symbol = " "
+format = 'via [$symbol$branch]($style)'
+truncation_length = 4
+truncation_symbol = '…/'
+# style = "bg:#394260"
+style = 'bold green'
+
+[git_status]
+format = '([ \( $all_status$ahead_behind\)]($style) )'
+# style = "bg:#394260"
+style = 'bold green'
+conflicted = '[ cflt=${count}](red) '
+up_to_date = '[󰘽 upd](green) '
+untracked = '[󰋗 u=${count}](red) '
+ahead = ' ahd=${count}'
+diverged = ' ahd=${ahead_count}  bhd=${behind_count}'
+behind = ' bhd=${count}'
+stashed = '[ sth=${count}](green) '
+modified = '[󰛿 mod=${count}](yellow) '
+staged = '[󰐗 s=${count}](green) '
+renamed = '[󱍸 ren=${count}](yellow) '
+deleted = '[󰍶 del=${count}](red) '
+
+[git_commit]
+tag_symbol = '  '
+
+# Last param in the first line/row
+[cmd_duration]
+disabled = false
+format = "took [$duration]($style)"
+min_time = 1
+
+
+# Prompt: param 2
+[character]
+error_symbol = " [×](bold red)"
+success_symbol = "[░░](bold purple)"
+
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[ocaml]
+symbol = " "
+
+[os]
+format = "on [($name )]($style)"
+style = "bold blue"
+disabled = true
+
+[os.symbols]
+Fedora = " "
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[zig]
+symbol = " "
+
+[gradle]
+symbol = " "
