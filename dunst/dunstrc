@@ -345,7 +345,7 @@
     background = "#222222"
     foreground = "#ffffff"
 	highlight = "#722ae6, #e4b5cb"
-    timeout = 10
+    timeout = 20
     # Icon for notifications with low urgency
     #default_icon = dialog-information
 
@@ -354,7 +354,7 @@
     foreground = "#ffffff"
 	frame_color = "#5e5086"
 	highlight = "#722ae6, #e4b5cb"
-    timeout = 10
+    timeout = 20
     override_pause_level = 30
     # Icon for notifications with normal urgency
     default_icon = dialog-information

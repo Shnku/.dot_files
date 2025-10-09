@@ -7,8 +7,8 @@ configuration {
 }
 
 * {
-    background: #111119;
-    lightbg: #222;
+    background: #111119ca;
+    lightbg: #222222ca;
 
     foreground: #e1e1ee;
     selected-normal-foreground: #fff0a0;	//selection text color
