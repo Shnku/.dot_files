@@ -1,4 +1,5 @@
-[{
+[
+/*{
     "mod": "dock",
     //"exclusive": true,
     "passthrough": true,
@@ -39,7 +40,7 @@
         "format": ""
     },
 },
-
+*/
 
 //waybar main............................................................
 {
@@ -52,7 +53,7 @@
     "gtk-layer-shell": true,
     //done..
     "height": 32,
-    "width":1250,
+    "width":1350,
     "margin": "0 35px 0 0",
     "margin-top":3,
     "spacing":0,
@@ -89,7 +90,7 @@
  //       "on-click": "activate",
  //	      "format": "{name}"
  //   },
-    
+ /*
 	"hyprland/workspaces": {
 	    "format": "{icon}",
 	    "on-click": "activate",
@@ -116,7 +117,8 @@
 	    //"on-scroll-down": "hyprctl dispatch workspace e-1",
 	    "disable-scroll": true,
     },
-    
+  */
+ 
     "wlr/taskbar": {
 		"format": "{icon}",
 		"icon-size": 18,
@@ -127,7 +129,7 @@
 		"on-click-middle": "close",
 	},
 
-    
+/*    
     "hyprland/window": {
         "format": "{}",
 		"rewrite": {},
@@ -137,7 +139,8 @@
 		"min-length" : 20,
 		"icon-size" : 18,
     },
-    
+  
+*/  
     "idle_inhibitor": {
         "format": "{icon}",
 		"format-icons": {
@@ -211,6 +214,8 @@
         //"max-length": 2,
         "on-click": "nm-connection-editor"
     },
+
+/*
      "custom/pacman": {
         "format": " {}",
         "interval": 7200,                     // every two hours
@@ -220,6 +225,8 @@
         "on-click": "foot -e update", // update system
         "signal": 8
     },
+*/
+
     "custom/power": {
       	"format":"  ⏻  ",
        	"on-click": "nwgbar",
@@ -238,7 +245,7 @@
              "exec": "~/.config/waybar/scripts/network_traffic.sh wlo1",
              "return-type": "json",
              "format-ethernet": "{icon} {ifname} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",    // optional
-},
+    },
     "pulseaudio": {
         "scroll-step": 3, // %, can be a float
         "format": "{icon} {volume}% {format_source}",

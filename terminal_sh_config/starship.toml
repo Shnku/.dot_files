@@ -1,18 +1,17 @@
 ## FIRST LINE/ROW: Info & Status
 # First param ─┌
 [username]
-format = "[░  $user]($style)@"
+format = " [╭─$user]($style)@"
 show_always = true
 style_root = "bold red"
-style_user = "bold purple"
+style_user = "bold red"
 
 # Second param
 [hostname]
 disabled = false
 format = "[$hostname]($style) in "
 ssh_only = false
-ssh_symbol = " "
-style = "bold yellow"
+style = "bold dimmed red"
 trim_at = "-"
 
 # Third param
@@ -21,17 +20,10 @@ style = "purple"
 truncate_to_repo = true
 truncation_length = 0
 truncation_symbol = "repo: "
-read_only = " 󰌾"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
 
 # Fourth param
-#[sudo]
-#disabled = false
+[sudo]
+disabled = false
 
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
@@ -41,42 +33,60 @@ deleted = "x"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 style = "white"
 
-[git_branch]
-symbol = " "
-
-[git_commit]
-tag_symbol = '  '
-
 # Last param in the first line/row
 [cmd_duration]
 disabled = false
 format = "took [$duration]($style)"
 min_time = 1
 
+## SECOND LINE/ROW: Prompt
+# Somethere at the beginning
+[battery]
+charging_symbol = ""
+disabled = true
+discharging_symbol = ""
+full_symbol = ""
+
+[[battery.display]] # "bold red" style when capacity is between 0% and 15%
+disabled = false
+style = "bold red"
+threshold = 15
+
+[[battery.display]] # "bold yellow" style when capacity is between 15% and 50%
+disabled = true
+style = "bold yellow"
+threshold = 50
+
+[[battery.display]] # "bold green" style when capacity is between 50% and 80%
+disabled = true
+style = "bold green"
+threshold = 80
+
+# Prompt: optional param 1
+[time]
+disabled = true
+format = " 🕙 $time($style)\n"
+style = "bright-white"
+time_format = "%T"
 
 # Prompt: param 2
 [character]
 error_symbol = " [×](bold red)"
-success_symbol = "[░░](bold purple)"
+success_symbol = " [╰─λ](bold red)"
 
+# SYMBOLS
+[status]
+disabled = false
+format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
+map_symbol = true
+pipestatus = true
+symbol = "🔴"
 
 [aws]
-symbol = "  "
-
-[buf]
-symbol = " "
-
-[c]
-symbol = " "
-
-[cmake]
-symbol = " "
+symbol = " "
 
 [conda]
 symbol = " "
-
-[crystal]
-symbol = " "
 
 [dart]
 symbol = " "
@@ -85,32 +95,19 @@ symbol = " "
 symbol = " "
 
 [elixir]
-symbol = " "
+symbol = " "
 
 [elm]
 symbol = " "
 
-[fennel]
-symbol = " "
-
-[fossil_branch]
+[git_branch]
 symbol = " "
 
 [golang]
 symbol = " "
 
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
 [hg_branch]
 symbol = " "
-
 
 [java]
 symbol = " "
@@ -118,114 +115,32 @@ symbol = " "
 [julia]
 symbol = " "
 
-[kotlin]
-symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
 [nim]
-symbol = "󰆥 "
+symbol = " "
 
 [nix_shell]
-symbol = " "
+symbol = " "
 
 [nodejs]
-symbol = " "
-
-[ocaml]
-symbol = " "
-
-[os]
-format = "on [($name )]($style)"
-style = "bold blue"
-disabled = true
-
-[os.symbols]
-Fedora = " "
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
+symbol = " "
 
 [package]
-symbol = "󰏗 "
+symbol = " "
 
 [perl]
-symbol = " "
+symbol = " "
 
 [php]
 symbol = " "
 
-[pijul_channel]
-symbol = " "
-
 [python]
 symbol = " "
 
-[rlang]
-symbol = "󰟔 "
-
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
-symbol = "󱘗 "
-
-[scala]
-symbol = " "
+symbol = " "
 
 [swift]
-symbol = " "
-
-[zig]
-symbol = " "
-
-[gradle]
-symbol = " "
+symbol = "ﯣ "
