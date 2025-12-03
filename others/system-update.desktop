@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Update System
+Name[en_US]=Update System
+StartupNotify=true
+Type=Application
+Comment=Update System & Apps
+Exec=gnome-terminal -- bash -c "~/.local/bin/system-updater-script.sh"
+Icon=system-software-update
+Terminal=false
+Categories=System;
+
