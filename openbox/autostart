@@ -17,8 +17,8 @@
 #xfce-mcs-manager &
 
 ## Kill if already running
-#killall -9 xfsettingsd picom polybar mpd dunst ksuperkey xfce4-power-manager
-killall -9  picom polybar mpd dunst plank lxqt-powermanagement copyq kdeconnect-indicator blueman-applet
+#killall -9 xfsettingsd picom polybar plank  mpd dunst ksuperkey lxqt-powermanagement  
+killall -9 conky plank picom polybar mpd dunst copyq lxpolkit xfce4-power-manager kdeconnect-indicator blueman-applet
 
 ## Restore Wallpaper
 nitrogen --restore
@@ -27,9 +27,10 @@ nitrogen --restore
 # xfsettingsd &
 
 ## polkit agent
-if [[ ! `pidof lxpolkit` ]]; then
-	/usr/bin/lxpolkit &
-fi
+#if [[ ! `pidof lxpolkit` ]]; then
+#/usr/bin/lxpolkit &
+lxpolkit &
+#fi
 
 ## Enable power management
 # xfce4-power-manager &
@@ -73,3 +74,6 @@ nm-applet --indicator &
 kdeconnect-indicator &
 
 bash ~/.config/polybar/launch.sh
+
+## Start conky system moniter
+exec conky -c ~/.config/conky/theme-my.conf &
