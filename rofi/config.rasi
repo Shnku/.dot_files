@@ -1,9 +1,15 @@
 //@theme "/usr/share/rofi/themes/Monokai.rasi"
 //@theme "/usr/share/rofi/themes/DarkBlue.rasi"
 
+/*****----- Configuration -----*****/
 configuration {
     font: "CascadiaCode 12";
-    show-icons: true; 			/* Disable icons if not needed */
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    display-drun: "  Apps";
+    display-run: "  Run";
+    display-filebrowser: " Files";
+    display-window: " Windows";
 }
 
 * {
@@ -23,9 +29,32 @@ configuration {
 }
 
 window {
+    /* properties for window widget */
     background: #333; /* Background for the window switcher */
     border: 1; /* Border for the window switcher */
     border-color: #444; /* Border color for the window switcher */
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     2px;
+    margin:                      0px;
+    padding:                     4px;
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    background-color:            transparent;
 }
 
 
