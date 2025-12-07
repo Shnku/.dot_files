@@ -3,35 +3,23 @@
 
 # .dot_files
 
-#### This repository is for storing my configuration files, dotfiles, and other custom settings for my Linux desktop environments
+This repository is for storing my configuration files, dotfiles, and other custom settings for my Linux desktop environments.  
+**My current setup features [Openbox](https://en.wikipedia.org/wiki/Openbox) Window Manager on [BOSS ***(Bharat Operating System Solutions)*** GNU/Linux](https://bosslinux.in/).** But you can setup each component manually. Checkout the [Set-Up guide](#setting-up)
 
-This setup features Openbox as the window manager, Polybar for the status bar, Plank as the dock, and Fastfetch for system information.
-  
-  [![Latest Release](https://img.shields.io/github/v/release/Arturo254/OpenTune?style=flat-square&logo=github&color=0D1117&labelColor=161B22)](https://github.com/Arturo254/OpenTune/releases)
-  [![License](https://img.shields.io/github/license/Arturo254/OpenTune?style=flat-square&logo=gnu&color=2B3137&labelColor=161B22)](https://github.com/Arturo254/OpenTune/blob/main/LICENSE)
-  [![Translation Status](https://badges.crowdin.net/opentune/localized.svg)](https://crowdin.com/project/opentune)
-  [![Android](https://img.shields.io/badge/Platform-Linux%206.0+-3DDC84.svg?style=flat-square&logo=linux&logoColor=white&labelColor=161B22)](https://www.android.com)
-  [![Stars](https://img.shields.io/github/stars/Arturo254/OpenTune?style=flat-square&logo=github&color=yellow&labelColor=161B22)](https://github.com/Arturo254/OpenTune/stargazers)
-  [![Forks](https://img.shields.io/github/forks/Arturo254/OpenTune?style=flat-square&logo=github&color=blue&labelColor=161B22)](https://github.com/Arturo254/OpenTune/network/members)
-</div>
-
----
-
-## Screenshots
-
-Here is screenshots showcasing my desktop environment and configurations:
-
-**all components like polybar, plank, waybar, rofi are independently customized.**
+[![License](https://img.shields.io/github/license/Shnku/.dot_files?style=flat-square&logo=gnu&color=2B3137&labelColor=161B22)](https://github.com/Shnku/.dot_files/blob/main/LICENSE)
+![Android](https://img.shields.io/badge/Platform-Linux%206.0+-3DDC84.svg?style=flat-square&logo=linux&logoColor=white&labelColor=161B22)
 
 ## Dot Files Includes
 
+</div>
+
+**├── Kvantum      :** modified sweet-kvantum-theme to use with kvantum-manager  
 **├── code-oss     :** code-oss/vscodium(vscode) user settings - snippet,shortcuts.  
 **├── code-profile :** profiles for vscode - python,latex,web,flutter etc.  
 **├── conky        :** lightweight system monitor  
 **├── dunst        :** notification daemon  
 **├── fastfetch    :** fetching sysinfo  
 **├── hypr         :** hyperland window manager  
-**├── Kvantum      :** modified sweet-kvantum-theme to use with kvantum-manager  
 **├── labwc        :** wayland equivalent to openbox  
 **├── nvim         :** neovim custom with lazyvim config  
 **├── openbox      :** openbox window manager x11  
@@ -43,74 +31,75 @@ Here is screenshots showcasing my desktop environment and configurations:
 **├── shell_conf   :** contains zsh bash fish shell and starship config  
 **└── waybar       :** wayland equivalent to polybar  
 
-### Desktop Environment
+<div align="center">
 
-![Desktop Screenshot](screenshot/sc.png)
-*This screenshot shows my customized Openbox desktop environment with Polybar at the top and Plank dock at the bottom.*
-**This is OpenBox on fedora**
+## Screenshots
 
-### Neovim custom (\*_*)
-
-![Neovim Screenshot](screenshot/nvim.png)
-*lazyvim configuration .*
-
-## Details
-
-- **Dotfiles Included:** This repository includes configuration files for various applications such as:
-  - **Openbox:** Configuration files for window management.
-  - **Polybar:** Custom configuration for the status bar, located in `.config/polybar/`.
-  - **Plank:** Configuration files for the dock, located in `.config/plank/`.
-  - **Fastfetch:** Configuration for displaying system information.
-
-<br>
-
----
+Here is screenshots showcasing my desktop environment and configurations:  
 
 # Setting Up
 
-**Usage:** To use these dotfiles, you can clone this repository and symlink the files to your home directory.
+</div>
 
-Clone the repo an enter into it
-
-  ```bash
-  git clone https://github.com/Shnku/.dot_files.git
-  cd .dot_files
-  ```
-
-## Setting Up OpenBox-WM x11
-
-This is actually **`openbox wm`** configuration on **`*fedora*`** which contains using **lxqt-desktop** base -
+To use these dotfiles, clone this repo & Copy or Symlinks the configes to desire locations (mainly at `~/.config`).
+**All components like polybar, plank, waybar, rofi are independently customized.**  
+Though this setup is Openbox focused. But all of my configs are included here like `hyperland` `labwc` wayland. You can pick config files individually and combine them.
 
 ```bash
-sudo dnf install git polybar rofi plank picom dunst nvim fastfetch copyq flameshot
+git clone https://github.com/Shnku/.dot_files.git
+cd .dot_files
 ```
 
-- With **vscodium** or **code-oss**(garuda configured)
-- **lazyvim** neovim config
-- **polybar** and **plank**-theme dock  with **rofi**search
-- **picom** for compositing
-- **dunst** as notification daemon
-- **copyq** as clipboard and **flameshot** as screenshot utility
-- custom **fastfetch**
-- fish like **zsh** config with **starship** prompt
+## Openbox Setup
+
+Openbox-session is configured with lxde/lxqt desktop base. Also possible with other distros- fedora(it was my previous setup), debian, arch. Just packages names may varies.
 
 ```bash
-  ln -s $(pwd)/openbox ~/.config/openbox
-  ln -s $(pwd)/polybar ~/.config/polybar
-  ln -s $(pwd)/rofi ~/.config/rofi
-  ln -s $(pwd)/picom ~/.config/picom
-  ln -s $(pwd)/plank ~/.local/share/plank
-  ln -s $(pwd)/fastfetch ~/.config/fastfetch
-  ln -s $(pwd)/nvim ~/.config/nvim
+git polybar rofi plank picom dunst fastfetch copyq flameshot conky brightnessctl
+
+#this packages are must install with apt/dnf/pacman/yay
 ```
 
-### Essential dependecies for polybar
+- **`polybar`** as statusbar (panel/top-bar) and **`plank`** dock  with **`rofi`** search
+- **`picom`** for compositing
+- **`dunst`** as notification daemon
+- **`copyq`** as clipboard
+- **`flameshot`** as screenshot utility
+- **`conky`** as desktop system moniter
 
-- **brightnessctl** for custom brightness control module. because default backlight module doesnot work
-  > `sudo dnf install brightnessctl`
-- JetBrains used as first font else default to noto sans **Nerd-Font** (also **fontawesome**) required for showing icons.
+For general apps recommendations...
 
-#### manual installation script for nerd-font
+- `qimgv` as image viewer
+- `qpdfview` as pdf viewer
+- `kdeconnect` for mobile syncing and sharing.
+
+> [!IMPORTANT]
+> `brightnessctl` is required for polybar to change the brightness in laptop.
+
+For theming,  
+`lxapperance qt5ct qt6ct`
+
+**Do symlink** or do copy the configes to desire locations (mainly at `~/.config`).
+
+```bash
+ln -s .dot_files/openbox ~/.config/openbox;
+ln -s .dot_files/polybar ~/.config/polybar;
+ln -s .dot_files/rofi ~/.config/rofi;
+ln -s .dot_files/picom ~/.config/picom;
+ln -s .dot_files/plank ~/.local/share/plank/themes/plank; # note
+ln -s .dot_files/fastfetch ~/.config/fastfetch;
+ln -s .dot_files/conky ~/.config/conky;
+```
+
+## Individual Set-ups
+
+### Setting up Fonts (Nerd-fonts, icon fonts)
+
+> [!IMPORTANT]
+> JetBrains used as first font else default to noto sans.
+> **Nerd-Font** (also **fontawesome**) required for showing icons.  
+
+**Manual installation script for nerd-font**
 
 ```bash
 cd ~/.local/share/fonts; 
@@ -125,7 +114,7 @@ fc-cache -fv #update font cache
 
 ```
 
-#### font-awesome and material design related **icon font**
+**font-awesome and material design related ***icon font*****
 
 ```bash
 #material design icon
@@ -150,33 +139,7 @@ fc-cache -fv
 
 ```
 
-### Essential for setting **Qt-themes**
-
-qt themes not seted via lxqt-apperance.  
-to do so add this to `.profile`
-
-```bash
-sudo dnf install qt6ct
-echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> .profile
-```
-
-### Touchpad Input Gesture fix
-
-**Tap to click** not work even if selected via lxqt-mouse settings ... so need to do this :
-
-```bash
-sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf
-# add these ..
-Section "InputClass"
-        Identifier "libinput touchpad catchall"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-        Option "Tapping" "on" #this line 
-EndSection
-```
-
-## zsh fish-like setup with starship
+### zsh fish-like setup with starship
 
 **NOTE :** This is Done in Fedora
 
@@ -207,4 +170,37 @@ plugins preactivated in `.zshrc`. and starship is preconfigured
 ```bash
 ln -s $(pwd)/terminal_sh_config/.zshrc ~/.zshrc; 
 ln -s $(pwd)/terminal_sh_config/starship.toml ~/.config/starship.toml;
+```
+
+### Essential for setting **Qt-themes**
+
+qt themes can't be sated via lxapperance.  
+to do so add this to `~/.profile`
+
+```bash
+# Choose accordingly qt6ct/qt5ct to use. 
+echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.profile
+```
+
+> [!NOTE]  
+> openbox session stores environment variables at `.config/openbox/environment`  
+> Need to change there. This maybe same for other desktop-sessions.
+
+### Touchpad Input Gesture fix
+
+**Tap to click** not work even if selected via lxqt-mouse settings ... so need to do this :
+
+```bash
+sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf
+# add these ..
+```
+
+```bash
+Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+        Option "Tapping" "on" #this line 
+EndSection
 ```
