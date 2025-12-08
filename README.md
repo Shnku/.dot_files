@@ -4,12 +4,12 @@
 # .dot_files
 
 This repository is for storing my configuration files, dotfiles, and other custom settings for my Linux desktop environments.  
-**My current setup features [Openbox](https://en.wikipedia.org/wiki/Openbox) Window Manager on [BOSS ***(Bharat Operating System Solutions)*** GNU/Linux](https://bosslinux.in/).** But you can setup each component manually. Checkout the [Set-Up guide](#setting-up)
+**My current setup features [Openbox](https://en.wikipedia.org/wiki/Openbox) Window Manager on [BOSS ***(Bharat Operating System Solutions)*** GNU/Linux](https://bosslinux.in/).** But possible to setup each component manually. Checkout the [Set-Up guide](#setting-up)
 
 [![License](https://img.shields.io/github/license/Shnku/.dot_files?style=flat-square&logo=gnu&color=2B3137&labelColor=161B22)](https://github.com/Shnku/.dot_files/blob/main/LICENSE)
 
 ![made for linux](https://img.shields.io/badge/Made%20for-linux-white?style=for-the-badge&logo=linux)
-![built with](https://img.shields.io/badge/Made%20with-love-pink?style=for-the-badge&logo=undertale)
+![built with](https://img.shields.io/badge/Made%20with-love-pink?style=for-the-badge&logo=undertale)  
 ![debian](https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white)
 ![fedora](https://img.shields.io/badge/Fedora-294172?style=for-the-badge&logo=fedora&logoColor=white)
 ![arch](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
@@ -41,19 +41,30 @@ This repository is for storing my configuration files, dotfiles, and other custo
 ## Screenshots
 
 Here is screenshots showcasing my desktop environment and configurations:
+
 ![screenshot](/screenshot/2025-12-08_17-29.png)
 
-Other and Old Screeshots
+Other and Old Screeshots  
 <details>
   <summary>setup on fedora</summary>
 
   ![old on fedora](/screenshot/sc.png)
+  ![first config-old](/screenshot/2024-12-24_20-27.png)
 </details>
+
 <details>
   <summary>boss linux cinnamon conky setup</summary>
   
   ![boss](/screenshot/Screenshot%20from%202025-12-03%2020-12-23.png)
-</details><br>
+  ![boss](/screenshot/Screenshot%20from%202025-12-03%2016-10-25.png)
+</details>
+
+<details>
+  <summary>neovim on qterminal fedora</summary>
+  
+  ![boss](/screenshot/nvim.png)
+</details>
+<br>
 
 ---
 
@@ -112,6 +123,19 @@ Other general recommendations for full fludge desktop experience ..
 
 For theming, (newer system uses qt6 generally)  
 `lxapperance qt5ct qt6ct qt5-style-kvantum qt5-gtk-platformtheme kvantum-qt5`  
+
+```bash
+# Get openbox themes from these links.
+git clone https://github.com/reorr/my-theme-collection.git;
+mv -v my-theme-collection/* ~/.themes/;
+git clone https://github.com/addy-dclxvi/openbox-theme-collections.git;
+mv -v openbox-theme-collections/* ~/.themes/
+
+# gtk theme
+git clone https://github.com/addy-dclxvi/gtk-theme-collections.git;
+mv -v gtk-theme-collections/* ~/.local/share/themes/
+```
+
 **Do symlink** or do copy the configes to desire locations (mainly at `~/.config`).
 
 ```bash
