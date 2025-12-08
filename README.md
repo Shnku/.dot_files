@@ -40,29 +40,36 @@ This repository is for storing my configuration files, dotfiles, and other custo
 
 ## Screenshots
 
-Here is screenshots showcasing my desktop environment and configurations:
+Here is the screenshot showcasing my **current** desktop environment and setup:  
 
 ![screenshot](/screenshot/2025-12-08_17-29.png)
 
-Other and Old Screeshots  
+Other and Old Screeshots
 <details>
-  <summary>setup on fedora</summary>
+  <summary>setup on fedora (polybar-colors.old, plank dock , fastfetch)</summary>
 
   ![old on fedora](/screenshot/sc.png)
+  old setup (polybar different color)
   ![first config-old](/screenshot/2024-12-24_20-27.png)
 </details>
 
 <details>
-  <summary>boss linux cinnamon conky setup</summary>
+  <summary>boss linux cinnamon conky setup (`/conky/boss_linux_conky.conf`)</summary>
   
   ![boss](/screenshot/Screenshot%20from%202025-12-03%2020-12-23.png)
   ![boss](/screenshot/Screenshot%20from%202025-12-03%2016-10-25.png)
 </details>
 
 <details>
-  <summary>neovim on qterminal fedora</summary>
+  <summary>neovim on qterminal fedora (lazyvim)</summary>
   
   ![boss](/screenshot/nvim.png)
+</details>
+
+<details>
+  <summary>hyperland setup on garuda linux (waybar)</summary>
+  
+  ![boss](/screenshot/2024-04-28T20_11_10,022624030+05_30_082331.png)
 </details>
 <br>
 
@@ -196,9 +203,9 @@ fc-cache -fv
 
 ```
 
-### zsh fish-like setup with starship
+---
 
-**NOTE :** This is Done in Fedora
+### zsh fish-like setup with starship
 
 ```bash
 #install oh-my-zsh
@@ -233,6 +240,8 @@ ln -s $(pwd)/shell_conf/starship.toml ~/.config/starship.toml;
 > starship and fish, bash is configured on garuda linux(Arch).
 > also in .rc files config aliases are may varies on system-wise
 
+---
+
 ### Essential for setting **Qt-themes**
 
 qt themes can't be sated via lxapperance.  
@@ -246,6 +255,8 @@ echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.profile
 > [!NOTE]  
 > openbox session stores environment variables at `.config/openbox/environment`  
 > Need to change there. This maybe same for other desktop-sessions.
+
+---
 
 ### Touchpad Input Gesture fix
 
