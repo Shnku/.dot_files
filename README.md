@@ -7,7 +7,12 @@ This repository is for storing my configuration files, dotfiles, and other custo
 **My current setup features [Openbox](https://en.wikipedia.org/wiki/Openbox) Window Manager on [BOSS ***(Bharat Operating System Solutions)*** GNU/Linux](https://bosslinux.in/).** But you can setup each component manually. Checkout the [Set-Up guide](#setting-up)
 
 [![License](https://img.shields.io/github/license/Shnku/.dot_files?style=flat-square&logo=gnu&color=2B3137&labelColor=161B22)](https://github.com/Shnku/.dot_files/blob/main/LICENSE)
-![Android](https://img.shields.io/badge/Platform-Linux%206.0+-3DDC84.svg?style=flat-square&logo=linux&logoColor=white&labelColor=161B22)
+
+![made for linux](https://img.shields.io/badge/Made%20for-linux-white?style=for-the-badge&logo=linux)
+![built with](https://img.shields.io/badge/Made%20with-love-pink?style=for-the-badge&logo=undertale)
+![debian](https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white)
+![fedora](https://img.shields.io/badge/Fedora-294172?style=for-the-badge&logo=fedora&logoColor=white)
+![arch](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)
 
 ## Dot Files Includes
 
@@ -35,7 +40,22 @@ This repository is for storing my configuration files, dotfiles, and other custo
 
 ## Screenshots
 
-Here is screenshots showcasing my desktop environment and configurations:  
+Here is screenshots showcasing my desktop environment and configurations:
+![screenshot](/screenshot/2025-12-08_17-29.png)
+
+Other and Old Screeshots
+<details>
+  <summary>setup on fedora</summary>
+
+  ![old on fedora](/screenshot/sc.png)
+</details>
+<details>
+  <summary>boss linux cinnamon conky setup</summary>
+  
+  ![boss](/screenshot/Screenshot%20from%202025-12-03%2020-12-23.png)
+</details><br>
+
+---
 
 # Setting Up
 
@@ -55,30 +75,43 @@ cd .dot_files
 Openbox-session is configured with lxde/lxqt desktop base. Also possible with other distros- fedora(it was my previous setup), debian, arch. Just packages names may varies.
 
 ```bash
-git polybar rofi plank picom dunst fastfetch copyq flameshot conky brightnessctl
+# this packages are must; 
+git polybar openbox rofi plank picom dunst fastfetch copyq  conky brightnessctl 
+# general purpose;
+qterminal lxpolkit lxqt-powermanagement pcmanfm obconf flameshot exa bat zsh nitrogen
 
-#this packages are must install with apt/dnf/pacman/yay
+# install them with apt/dnf/pacman/yay
 ```
 
 - **`polybar`** as statusbar (panel/top-bar) and **`plank`** dock  with **`rofi`** search
 - **`picom`** for compositing
 - **`dunst`** as notification daemon
 - **`copyq`** as clipboard
-- **`flameshot`** as screenshot utility
 - **`conky`** as desktop system moniter
 
-For general apps recommendations...
+For needed apps *(this apps are mentioned in config, if other alternative used, needs to change them accordingly)*...
 
+- `lxpolkit` used as policykt agent (it provides root passwd prompt).
+- `qterminal` as default terminal
+- `exa` and `bat` as alternate to `ls` and `cat` command
+- `zsh` as default POSH shell
+- `lxqt-powermanagement` (default in lxde/lxqt) or `xfce4-power-manager` can be use in case of laptop.
+- `nitrogen` for wallpaper changing utility
+
+Other general recommendations for full fludge desktop experience ..  
+
+- `flameshot` as screenshot utility
 - `qimgv` as image viewer
-- `qpdfview` as pdf viewer
+- `qpdfview` as pdf viewer supports tabs
+- `qalculate` as calculator provider
 - `kdeconnect` for mobile syncing and sharing.
 
 > [!IMPORTANT]
-> `brightnessctl` is required for polybar to change the brightness in laptop.
+> `brightnessctl` is required for **polybar** to change the brightness in laptop.  
+> **Nerd font** required also.  
 
-For theming,  
-`lxapperance qt5ct qt6ct`
-
+For theming, (newer system uses qt6 generally)  
+`lxapperance qt5ct qt6ct qt5-style-kvantum qt5-gtk-platformtheme kvantum-qt5`  
 **Do symlink** or do copy the configes to desire locations (mainly at `~/.config`).
 
 ```bash
@@ -114,7 +147,7 @@ fc-cache -fv #update font cache
 
 ```
 
-**font-awesome and material design related ***icon font*****
+**font-awesome and material design related *icon font***
 
 ```bash
 #material design icon
@@ -150,7 +183,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -sS https://starship.rs/install.sh | sh;
 ```
 
-Install **zsh plugins** `autocomplete` (also available in dnf), `autosuggation`, `history search substring` .
+Install **zsh plugins** `autocomplete` (some available in dnf,apt, all in arch repo), `autosuggation`,`zsh-syntax-highlighting`, `history search substring` .
 
 ```bash
 git clone https://github.com/zsh-users/zsh-completions.git \
@@ -168,9 +201,13 @@ Now, *copy* or *symlink*
 plugins preactivated in `.zshrc`. and starship is preconfigured
 
 ```bash
-ln -s $(pwd)/terminal_sh_config/.zshrc ~/.zshrc; 
-ln -s $(pwd)/terminal_sh_config/starship.toml ~/.config/starship.toml;
+ln -s $(pwd)/shell_conf/.zshrc ~/.zshrc; 
+ln -s $(pwd)/shell_conf/starship.toml ~/.config/starship.toml;
 ```
+
+> [!NOTE]  
+> starship and fish, bash is configured on garuda linux(Arch).
+> also in .rc files config aliases are may varies on system-wise
 
 ### Essential for setting **Qt-themes**
 
