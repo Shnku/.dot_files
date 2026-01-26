@@ -4,8 +4,8 @@
 #
 
 # To set your language for displaying messages and time/date formats, use the following:
-#LANG=en_CA.UTF8
-#XDG_SESSION_TYPE=x11; export XDG_SESSION_TYPE
+LANG=en_US.UTF8
+XDG_SESSION_TYPE=x11; export XDG_SESSION_TYPE
 
 # To set your keyboard layout, you need to modify your X config:
 # http://www.google.com/search?q=how+to+set+keyboard+layout+xorg

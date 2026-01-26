@@ -13,18 +13,20 @@
 #fi
 
 # If you want to use XFCE config tools...
-#
-#xfce-mcs-manager &
+xfce-mcs-manager &
 
 ## Kill if already running
-#killall -9 xfsettingsd picom polybar plank  mpd dunst ksuperkey lxqt-powermanagement  
-killall -9 conky plank picom polybar mpd dunst copyq lxpolkit xfce4-power-manager kdeconnect-indicator blueman-applet
+killall -9 xfsettingsd
+# killall -9 lxqt-powermanagement 
+killall -9 xfce4-power-manager
+killall -9 conky plank picom polybar dunst copyq lxpolkit kdeconnect-indicator blueman-applet  #nm-applet
+# killall -9 mpd ksuperkey 
 
 ## Restore Wallpaper
 nitrogen --restore
 
 # xfce4-settings daemon
-# xfsettingsd &
+xfsettingsd &
 
 ## polkit agent
 #if [[ ! `pidof lxpolkit` ]]; then
@@ -33,8 +35,8 @@ lxpolkit &
 #fi
 
 ## Enable power management
-# xfce4-power-manager &
-lxqt-powermanagement &
+xfce4-power-manager &
+#lxqt-powermanagement &
 
 ## Start Compositing Manager
 exec picom &
@@ -51,7 +53,7 @@ exec dunst &
 exec plank &
 
 ## Thunar Daemon
-# exec thunar --daemon &
+exec thunar --daemon &
 
 ## enable clipboard manager..
 copyq &
@@ -68,7 +70,7 @@ copyq &
 nm-applet --indicator &
 
 ## User Friendly Bluetooth Menu
-#blueman-applet &
+blueman-applet &
 
 ## enable kde connect applet
 kdeconnect-indicator &
