@@ -1,8 +1,7 @@
 # Example autostart file
 
 # Set background color.
-swaybg -i $HOME/.local/share/wallpapers/a_girl_standing_on_a_road_with_trees_and_mountains_in_the_background.jpg >/dev/null 2>&1 &
-# nitrogen --restore
+swaybg -c '#113344' >/dev/null 2>&1 &
 
 # Configure output directives such as mode, position, scale and transform.
 # Use wlr-randr to get your output names
@@ -11,7 +10,7 @@ swaybg -i $HOME/.local/share/wallpapers/a_girl_standing_on_a_road_with_trees_and
 #     output HDMI-A-1 position 1366,0
 #     output eDP-1 position 0,0
 #   }
-kanshi >/dev/null 2>&1 &
+# kanshi >/dev/null 2>&1 &
 
 # Launch a panel such as yambar or waybar.
 waybar >/dev/null 2>&1 &
@@ -39,3 +38,4 @@ swayidle -w \
 	timeout 600 'wlopm --off \*' \
 	resume 'wlopm --on \*' \
 	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+
