@@ -45,7 +45,7 @@
   </placement>
   <!-- Theme -->
   <theme>
-    <name>Degrade-Froly</name>
+    <name>Triste-Violet</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -267,7 +267,6 @@
         </finalactions>
       </action>
     </keybind>
-
     <keybind key="C-A-Up">
       <action name="GoToDesktop">
         <to>up</to>

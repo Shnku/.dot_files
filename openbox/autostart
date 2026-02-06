@@ -31,12 +31,15 @@ xfsettingsd &
 ## polkit agent
 #if [[ ! `pidof lxpolkit` ]]; then
 #/usr/bin/lxpolkit &
-lxpolkit &
+#lxpolkit &
 #fi
+/usr/libexec/xfce-polkit &
 
 ## Enable power management
 xfce4-power-manager &
 #lxqt-powermanagement &
+#xscreensaver &
+otd-daemon &
 
 ## Start Compositing Manager
 exec picom &

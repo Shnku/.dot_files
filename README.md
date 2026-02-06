@@ -129,7 +129,8 @@ Other general recommendations for full fludge desktop experience ..
 > **Nerd font** required also.  
 
 For theming, (newer system uses qt6 generally)  
-`lxapperance qt5ct qt6ct qt5-style-kvantum qt5-gtk-platformtheme kvantum-qt5`  
+`lxapperance qt5ct qt6ct qt5-style-kvantum qt5-gtk-platformtheme kvantum-qt5`
+Alternatively you can use `xfce4-appearance-settings` or other xfce related things.
 
 ```bash
 # Get openbox themes from these links.
@@ -146,13 +147,20 @@ mv -v gtk-theme-collections/* ~/.local/share/themes/
 **Do symlink** or do copy the configes to desire locations (mainly at `~/.config`).
 
 ```bash
-ln -s .dot_files/openbox ~/.config/openbox;
-ln -s .dot_files/polybar ~/.config/polybar;
-ln -s .dot_files/rofi ~/.config/rofi;
-ln -s .dot_files/picom ~/.config/picom;
-ln -s .dot_files/plank ~/.local/share/plank/themes/plank; # note
-ln -s .dot_files/fastfetch ~/.config/fastfetch;
-ln -s .dot_files/conky ~/.config/conky;
+mkdir -p ~/.config/openbox;
+ln -s $PWD/.dot_files/openbox ~/.config/openbox;
+mkdir -p ~/.config/polybar;
+ln -s $pwd/.dot_files/polybar ~/.config/polybar;
+mkdir -p ~/.config/rofi;
+ln -s $pwd/.dot_files/rofi ~/.config/rofi;
+mkdir -p ~/.config/picom;
+ln -s $pwd/.dot_files/picom ~/.config/picom;
+mkdir -p ~/.local/share/plank/themes/plank;
+ln -s $pwd/.dot_files/plank ~/.local/share/plank/themes/plank; # note
+mkdir -p ~/.config/fastfetch;
+ln -s $pwd/.dot_files/fastfetch ~/.config/fastfetch;
+mkdir -p ~/.config/conky;
+ln -s $pwd/.dot_files/conky ~/.config/conky;
 ```
 
 ## Individual Set-ups
@@ -166,7 +174,7 @@ ln -s .dot_files/conky ~/.config/conky;
 **Manual installation script for nerd-font**
 
 ```bash
-cd ~/.local/share/fonts; 
+mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts; 
 for i in FiraCode Inconsolata Cascedia AnonymousPro JetBrainsMono Hack Iosevka ; do
   curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/${i}.tar.xz"                                 
 done;ls;
@@ -234,6 +242,13 @@ plugins preactivated in `.zshrc`. and starship is preconfigured
 ```bash
 ln -s $(pwd)/shell_conf/.zshrc ~/.zshrc; 
 ln -s $(pwd)/shell_conf/starship.toml ~/.config/starship.toml;
+```
+
+or, do copy..
+
+```bash
+cp -v $(pwd)/shell_conf/.zshrc ~/.zshrc; 
+cp -v $(pwd)/shell_conf/starship.toml ~/.config/starship.toml;
 ```
 
 > [!NOTE]  
