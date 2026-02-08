@@ -28,7 +28,7 @@ nitrogen --restore
 # xfce4-settings daemon
 xfsettingsd &
 
-## polkit agent
+## polkit agent lxqt's or xfce's
 #if [[ ! `pidof lxpolkit` ]]; then
 #/usr/bin/lxpolkit &
 #lxpolkit &
@@ -39,7 +39,6 @@ xfsettingsd &
 xfce4-power-manager &
 #lxqt-powermanagement &
 #xscreensaver &
-otd-daemon &
 
 ## Start Compositing Manager
 exec picom &
@@ -50,7 +49,7 @@ exec picom &
 exec dunst &
 
 ## Start Music Player Daemon
-# exec mpd &
+exec mpd &
 
 ## Launch Plank
 exec plank &
@@ -78,6 +77,13 @@ blueman-applet &
 ## enable kde connect applet
 kdeconnect-indicator &
 
+# screenshot tool
+flameshot &
+
+# open-tablet-driver autostart
+#otd-daemon &
+
+# launch polybar
 bash ~/.config/polybar/launch.sh
 
 ## Start conky system moniter
