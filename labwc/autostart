@@ -1,7 +1,9 @@
 # Example autostart file
 
 # Set background color.
-swaybg -c '#113344' >/dev/null 2>&1 &
+# swaybg -c '#113344' >/dev/null 2>&1 &
+# using Azote for wallpaper, the config script stored at ~/.azotebg
+bash ~/.azotebg >/dev/null 2>&1 &
 
 # Configure output directives such as mode, position, scale and transform.
 # Use wlr-randr to get your output names
@@ -26,6 +28,27 @@ waybar >/dev/null 2>&1 &
 # mako >/dev/null 2>&1 &
 dunst >/dev/null 2>&1 &
 
+## Other user autostarts---------------
+#provides polkit authecation popup..
+/usr/libexec/xfce-polkit &
+#thunar file manager..
+exec thunar --daemon &
+#conky system moniter..
+exec conky -c ~/.config/conky/theme-my.conf &
+#kdeconnect device status.. 
+kdeconnect-indicator &
+#network managet spplet..
+nm-applet --indicator &
+#provides night light feature..
+gammastep &
+#blutooth indicator..
+blueman-applet &
+#clipboard manager..
+copyq &
+#open tablet driver..
+# otd-daemon &
+## ------------------------------------
+
 # Lock screen after 5 minutes; turn off display after another 5 minutes.
 #
 # Note that in the context of idle system power management, it is *NOT* a good
@@ -33,9 +56,13 @@ dunst >/dev/null 2>&1 &
 # `wlr-randr --output <whatever> --off` because this re-arranges windows
 # (since a837fef). Instead use a wlr-output-power-management client such as
 # https://git.sr.ht/~leon_plickat/wlopm
-swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
-	timeout 600 'wlopm --off \*' \
-	resume 'wlopm --on \*' \
-	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+#swayidle -w \
+#	timeout 300 'swaylock -f -c 000000' \
+#	timeout 600 'wlopm --off \*' \
+#	resume 'wlopm --on \*' \
+#	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
 
+swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 400 'systemctl suspend' \
+    before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
