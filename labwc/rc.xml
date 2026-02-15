@@ -1,12 +1,10 @@
-<?xml version="1.0"?>
-
 <!--
   This file contains all supported config elements & attributes with
   default values.
+
+  Values for [yes|no] can be replaced by [true|false], [on|off] or [1|0].
 -->
-
 <labwc_config>
-
   <core>
     <decoration>server</decoration>
     <gap>0</gap>
@@ -16,8 +14,11 @@
     <reuseOutputMode>no</reuseOutputMode>
     <xwaylandPersistence>no</xwaylandPersistence>
     <primarySelection>yes</primarySelection>
+    <!--
+      # See labwc-config(5) for details
+      <promptCommand></promptCommand>
+    -->
   </core>
-
   <placement>
     <policy>cascade</policy>
     <!--
@@ -26,11 +27,10 @@
       <cascadeOffset x="40" y="30" />
     -->
   </placement>
-
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
-    <name></name>
-    <icon></icon>
+    <!-- <name>Numix</name> -->
+    <!-- <icon>breeze</icon> -->
     <fallbackAppIcon>labwc</fallbackAppIcon>
     <titlebar>
       <layout>icon:iconify,max,close</layout>
@@ -38,8 +38,9 @@
     </titlebar>
     <cornerRadius>8</cornerRadius>
     <keepBorder>yes</keepBorder>
-    <dropShadows>no</dropShadows>
-    <dropShadowsOnTiled>no</dropShadowsOnTiled>
+    <maximizedDecoration>titlebar</maximizedDecoration>
+    <dropShadows>yes</dropShadows>
+    <dropShadowsOnTiled>yes</dropShadowsOnTiled>
     <font place="ActiveWindow">
       <name>sans</name>
       <size>10</size>
@@ -70,9 +71,12 @@
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
+    <name>Arc-Clone</name>
+    <icon>Papirus-Dark</icon>
   </theme>
-
-  <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
+  <!-- window related  -->
+  <windowSwitcher preview="yes" outlines="yes" unshade="yes">
+    <osd show="yes" style="classic" output="all" thumbnailLabelFormat="%T" />
     <fields>
       <field content="icon" width="5%" />
       <field content="desktop_entry_name" width="30%" />
@@ -86,13 +90,13 @@
       -->
     </fields>
   </windowSwitcher>
-
   <!--
     Many other kinds of content are supported in the window switcher like below.
     Some contents are fixed-length and others are variable-length.
     See "man 5 labwc-config" for details.
 
-    <windowSwitcher show="yes" preview="no" outlines="no" allWorkspaces="yes">
+    <windowSwitcher preview="no" outlines="no">
+      <osd show="yes" />
       <fields>
         <field content="workspace" width="5%" />
         <field content="state" width="3%" />
@@ -112,13 +116,13 @@
     then workspace name, then identifier/app-id, then the window title.
     It uses 100% of OSD window width.
 
-    <windowSwitcher show="yes" preview="no" outlines="no" allWorkspaces="yes">
+    <windowSwitcher preview="no" outlines="no">
+      <osd show="yes" />
       <fields>
         <field content="custom" format="foobar %b %3s %-10o %-20W %-10i %t" width="100%" />
       </fields>
     </windowSwitcher>
   -->
-
   <!-- edge strength is in pixels -->
   <resistance>
     <screenEdgeStrength>20</screenEdgeStrength>
@@ -127,8 +131,8 @@
     <unSnapThreshold>20</unSnapThreshold>
     <!-- resistance for vertically/horizontally maximized windows -->
     <unMaximizeThreshold>150</unMaximizeThreshold>
+    <unMaximizeTreshold>100</unMaximizeTreshold>
   </resistance>
-
   <resize>
     <!-- Show a simple resize and move indicator -->
     <popupShow>Never</popupShow>
@@ -136,7 +140,6 @@
     <drawContents>yes</drawContents>
     <!-- Borders are effectively 8 pixels wide regardless of visual appearance -->
     <minimumArea>8</minimumArea>
-
     <!--
       Set cornerRange to a positive value to increase the size of corner
       regions for mouse actions and diagonal window resizing. When omitted,
@@ -145,45 +148,33 @@
       <cornerRange>8</cornerRange>
     -->
   </resize>
-
   <focus>
     <followMouse>no</followMouse>
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
     <raiseOnFocus>no</raiseOnFocus>
   </focus>
-
   <snapping>
-    <!-- Set range to 0 to disable window snapping completely -->
-    <range>10</range>
+    <!-- Set inner and outer range to 0 to disable window snapping completely -->
+    <range inner="10" outer="10" />
+    <cornerRange>50</cornerRange>
     <overlay enabled="yes">
       <delay inner="500" outer="500" />
     </overlay>
     <topMaximize>yes</topMaximize>
     <notifyClient>always</notifyClient>
   </snapping>
-
   <!--
-    Workspaces can be configured like this: -->
-    <desktops>
-      <popupTime>1000</popupTime>
-      <names>
-        <name>Workspace 1</name>
-        <name>Workspace 2</name>
-        <name>Workspace 3</name>
-        <name>Workspace 4</name>
-      </names>
-    </desktops>
+    Workspaces can be configured like this:
+-->
+  <!-- Or it can also be configured like this:-->
+  <!-- <desktops number="4" /> -->
+  <!-- Or like this:-->
+  <!-- <desktops>
+    <popupTime>500</popupTime>
+    <number>5</number>
+    <prefix>ws</prefix>
+  </desktops> -->
   <!--
-    Or it can also be configured like this:
-    <desktops number="4" />
-
-    Or like this:
-    <desktops>
-      <popupTime>500</popupTime>
-      <number>5</number>
-      <prefix>ws</prefix>
-    </desktops>
-
     Or:
     <desktops number="4" popupTime="500" prefix="ws" />
 
@@ -198,22 +189,25 @@
   -->
   <desktops>
     <popupTime>1000</popupTime>
+    <initial>1</initial>
     <names>
-      <name>Default</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
     </names>
   </desktops>
-
   <!--
     <margin> can be used to reserve space where new/maximized/tiled
     windows will not be placed. Clients using layer-shell protocol reserve
     space automatically, so <margin> is only intended for other, specialist
     cases.
 
-    If output is left empty, the margin will be applied to all outputs.
+    If 'output' is not provided, the margin will be applied to all outputs.
 
-    <margin top="" bottom="" left="" right="" output="" />
-  -->
-
+    -->
+  <!-- <margin top="10" bottom="10" left="10" right="10" output="HDMI-A-1" /> -->
+  <!-- <margin top="10" bottom="10" left="10" right="10" output="LVDS-1" /> -->
   <!-- Percent based regions based on output usable area, % char is required -->
   <!--
     <regions>
@@ -228,7 +222,6 @@
       <region name="bottom-right" x="50%" y="50%" height="50%"  width="50%"  />
     </regions>
   -->
-
   <!--
     Keybind actions are specified in labwc-actions(5)
     The following keybind modifiers are supported:
@@ -251,20 +244,28 @@
     <layoutScope>global</layoutScope>
     <repeatRate>25</repeatRate>
     <repeatDelay>600</repeatDelay>
+    <!-- Cycle focus to next/previous window, respectively. -->
+    <!-- Default keybinds for NextWindow and PreviousWindow are Alt-Tab and Shift-Alt-Tab. While
+      cycling through windows, the arrow keys move the selected window forwards/backwards and the escape
+      key halts the cycling.
+        workspace [all|current] This determines whether to cycle through windows on all workspaces or the
+          current workspace. Default is "current".
+        output [all|focused|cursor] This determines whether to cycle through windows on all outputs, the
+          focused output, or the output under the cursor. Default is "all".
+        identifier [all|current] This determines whether to cycle through all windows or only windows of
+          the same application as the currently focused window. Default is "all". 
+    -->
     <keybind key="A-Tab">
-      <action name="NextWindow" />
+      <action name="NextWindow" workspace="all" output="all" identifier="all" />
     </keybind>
     <keybind key="A-S-Tab">
-      <action name="PreviousWindow" />
+      <action name="PreviousWindow" workspace="all" output="all" identifier="all" />
     </keybind>
-    <keybind key="W-Return">
-      <action name="Execute" command="qterminal" />
+    <keybind key="W-Escape">
+      <action name="Iconify" />
     </keybind>
-    <keybind key="A-F3">
-      <action name="Execute" command="bemenu-run" />
-    </keybind>
-    <keybind key="W-Space">
-      <action name="Execute" command="rofi -show drun" />
+    <keybind key="A-S-d">
+      <action name="ToggleDecorations" />
     </keybind>
     <keybind key="A-F4">
       <action name="Close" />
@@ -272,29 +273,17 @@
     <keybind key="W-a">
       <action name="ToggleMaximize" />
     </keybind>
-    <keybind key="A-Left">
-      <action name="MoveToEdge" direction="left" />
-    </keybind>
-    <keybind key="A-Right">
-      <action name="MoveToEdge" direction="right" />
-    </keybind>
-    <keybind key="A-Up">
-      <action name="MoveToEdge" direction="up" />
-    </keybind>
-    <keybind key="A-Down">
-      <action name="MoveToEdge" direction="down" />
-    </keybind>
     <keybind key="W-Left">
-      <action name="SnapToEdge" direction="left" />
+      <action name="SnapToEdge" direction="left" combine="yes" />
     </keybind>
     <keybind key="W-Right">
-      <action name="SnapToEdge" direction="right" />
+      <action name="SnapToEdge" direction="right" combine="yes" />
     </keybind>
     <keybind key="W-Up">
-      <action name="SnapToEdge" direction="up" />
+      <action name="SnapToEdge" direction="up" combine="yes" />
     </keybind>
     <keybind key="W-Down">
-      <action name="SnapToEdge" direction="down" />
+      <action name="SnapToEdge" direction="down" combine="yes" />
     </keybind>
     <keybind key="A-Space">
       <action name="ShowMenu" menu="client-menu" atCursor="no" />
@@ -313,6 +302,88 @@
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
       <action name="Execute" command="brightnessctl set 10%-" />
+    </keybind>
+    <!-- Media Controls -->
+    <keybind key="XF86AudioStop">
+      <action name="Execute" command="mpc stop" />
+    </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute" command="mpc toogle" />
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute" command="mpc prev" />
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute" command="mpc next" />
+    </keybind>
+    <!-- keybing for workspace switching -->
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1" />
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2" />
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3" />
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4" />
+    </keybind>
+    <!-- Keybindings for windows -->
+    <keybind key="A-F4">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close" />
+    </keybind>
+    <!-- Keybindings for window switching with the arrow keys -->
+    <keybind key="Super_L" onRelease="yes">
+      <action name="Execute" command="rofi -show drun" />
+    </keybind>
+    <!-- Action : SendToDesktop -->
+    <keybind key="W-S-Right">
+      <action name="SendToDesktop" to="right" follow="yes" wrap="yes" />
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="SendToDesktop" to="left" follow="yes" wrap="yes" />
+    </keybind>
+    <keybind key="S-W-1">
+      <action name="SendToDesktop" to="1" follow="no" wrap="yes" />
+    </keybind>
+    <keybind key="S-W-2">
+      <action name="SendToDesktop" to="2" follow="no" wrap="yes" />
+    </keybind>
+    <keybind key="S-W-3">
+      <action name="SendToDesktop" to="3" follow="no" wrap="yes" />
+    </keybind>
+    <keybind key="S-W-4">
+      <action name="SendToDesktop" to="4" follow="no" wrap="yes" />
+    </keybind>
+    <keybind key="S-W-5">
+      <action name="SendToDesktop" to="5" follow="no" wrap="yes" />
+    </keybind>
+    <!-- launch rofi -->
+    <keybind key="A-space">
+      <action name="Execute">
+        <command>rofi -show drun</command>
+      </action>
+    </keybind>
+    <!-- Keybindings for running applications -->
+    <keybind key="W-Return">
+      <action name="Execute" command="qterminal" />
+    </keybind>
+    <keybind key="W-Space">
+      <action name="Execute" command="fuzzel" />
+    </keybind>
+    <!-- toggle clipboard copyq -->
+    <keybind key="W-v">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>copyq</name>
+        </startupnotify>
+        <command>copyq toggle</command>
+      </action>
     </keybind>
     <!-- SnapToRegion via W-Numpad -->
     <!--
@@ -355,7 +426,6 @@
     </keybind>
   -->
   </keyboard>
-
   <!--
     Multiple <mousebind> can exist within one <context>
     Multiple <actions> can exist within one <mousebind>
@@ -368,68 +438,33 @@
     example.
   -->
   <mouse>
-
     <!-- time is in ms -->
     <doubleClickTime>500</doubleClickTime>
-
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
+      <mousebind button="W-Left" action="Press">
         <action name="Focus" />
         <action name="Raise" />
       </mousebind>
-      <mousebind button="A-Left" action="Drag">
+      <mousebind button="W-Left" action="Drag">
         <action name="Move" />
       </mousebind>
-      <mousebind button="A-Right" action="Press">
+      <mousebind button="W-Right" action="Press">
         <action name="Focus" />
         <action name="Raise" />
       </mousebind>
-      <mousebind button="A-Right" action="Drag">
+      <mousebind button="W-Right" action="Drag">
         <action name="Resize" />
       </mousebind>
     </context>
-
-    <context name="Top">
+    <context name="Border">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
       <mousebind button="Left" action="Drag">
         <action name="Resize" />
       </mousebind>
     </context>
-    <context name="Left">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize" />
-      </mousebind>
-    </context>
-    <context name="Right">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize" />
-      </mousebind>
-    </context>
-    <context name="Bottom">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize" />
-      </mousebind>
-    </context>
-    <context name="TRCorner">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize" />
-      </mousebind>
-    </context>
-    <context name="BRCorner">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize" />
-      </mousebind>
-    </context>
-    <context name="TLCorner">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize" />
-      </mousebind>
-    </context>
-    <context name="BLCorner">
-      <mousebind button="Left" action="Drag">
-        <action name="Resize" />
-      </mousebind>
-    </context>
-
     <context name="TitleBar">
       <mousebind button="Left" action="Press">
         <action name="Focus" />
@@ -448,7 +483,6 @@
         <action name="Shade" />
       </mousebind>
     </context>
-
     <context name="Title">
       <mousebind button="Left" action="Drag">
         <action name="Move" />
@@ -460,7 +494,6 @@
         <action name="ShowMenu" menu="client-menu" />
       </mousebind>
     </context>
-
     <context name="Maximize">
       <mousebind button="Left" action="Click">
         <action name="ToggleMaximize" />
@@ -472,7 +505,6 @@
         <action name="ToggleMaximize" direction="vertical" />
       </mousebind>
     </context>
-
     <context name="WindowMenu">
       <mousebind button="Left" action="Click">
         <action name="ShowMenu" menu="client-menu" atCursor="no" />
@@ -481,7 +513,6 @@
         <action name="ShowMenu" menu="client-menu" atCursor="no" />
       </mousebind>
     </context>
-
     <context name="Icon">
       <mousebind button="Left" action="Click">
         <action name="ShowMenu" menu="client-menu" atCursor="no" />
@@ -490,31 +521,26 @@
         <action name="ShowMenu" menu="client-menu" atCursor="no" />
       </mousebind>
     </context>
-
     <context name="Shade">
       <mousebind button="Left" action="Click">
         <action name="ToggleShade" />
       </mousebind>
     </context>
-
     <context name="AllDesktops">
       <mousebind button="Left" action="Click">
         <action name="ToggleOmnipresent" />
       </mousebind>
     </context>
-
     <context name="Iconify">
       <mousebind button="Left" action="Click">
         <action name="Iconify" />
       </mousebind>
     </context>
-
     <context name="Close">
       <mousebind button="Left" action="Click">
         <action name="Close" />
       </mousebind>
     </context>
-
     <context name="Client">
       <mousebind button="Left" action="Press">
         <action name="Focus" />
@@ -529,7 +555,6 @@
         <action name="Raise" />
       </mousebind>
     </context>
-
     <context name="Root">
       <mousebind button="Left" action="Press">
         <action name="ShowMenu" menu="root-menu" />
@@ -549,9 +574,7 @@
         <action name="GoToDesktop" to="right" wrap="yes" />
       </mousebind>
     </context>
-
   </mouse>
-
   <!--
     A touch configuration can be bound to a specific device. If device
     name is left empty, the touch configuration applies to all touch
@@ -565,8 +588,11 @@
     If mouseEmulation is enabled, all touch up/down/motion events are
     translated to mouse button and motion events.
   -->
-  <touch deviceName="" mapToOutput="" mouseEmulation="no" />
-
+  <touch>
+    <!-- <deviceName>ELAN2514:00 04F3:2AF1<deviceName> -->
+    <!-- <mapToOutput>HDMI-A-1</mapToOutput> -->
+    <mouseEmulation>no</mouseEmulation>
+  </touch>
   <!--
     The tablet cursor movement can be restricted to a single output.
     If output is left empty or the output does not exists, the tablet
@@ -592,14 +618,14 @@
     When using mouse emulation, the pen tip [tip] and the stylus buttons
     can be set to any available mouse button [Left|Right|Middle|..|Task].
   -->
-  <tablet mapToOutput="" rotate="0" mouseEmulation="no">
+  <tablet rotate="0" mouseEmulation="no">
+    <!-- <mapToOutput>HDMI-A-1</mapToOutput> -->
     <!-- Active area dimensions are in mm -->
     <area top="0.0" left="0.0" width="0.0" height="0.0" />
     <map button="Tip" to="Left" />
     <map button="Stylus" to="Right" />
     <map button="Stylus2" to="Middle" />
   </tablet>
-
   <!--
     All tablet tools, except of type mouse and lens, use absolute
     positioning by default. The *motion* attribute allows to set tools
@@ -609,7 +635,6 @@
     1.0 increases the speed of the cursor.
   -->
   <tabletTool motion="absolute" relativeMotionSensitivity="1.0" />
-
   <!--
     The *category* attribute is optional and can be set to touch, touchpad,
     non-touch, default or the name of a device. You can obtain device names by
@@ -623,31 +648,37 @@
       - accelProfile [flat|adaptive]
       - tapButtonMap [lrm|lmr]
       - clickMethod [none|buttonAreas|clickfinger]
+      - scrollMethod [twoFinger|edge|none]
       - sendEventsMode [yes|no|disabledOnExternalMouse]
       - calibrationMatrix [six float values split by space]
       - scrollFactor [float]
+
+    The following <libinput>...</libinput> block may not be complete for
+    your requirements. Default values are device specific. Only set an option
+    if you require to override the default. Valid values must be inserted.
+
   -->
   <libinput>
     <device category="default">
-      <naturalScroll></naturalScroll>
-      <leftHanded></leftHanded>
-      <pointerSpeed></pointerSpeed>
-      <accelProfile></accelProfile>
+      <!-- <naturalScroll>no</naturalScroll> -->
+      <!-- <leftHanded>no</leftHanded> -->
+      <!-- <pointerSpeed>0.0</pointerSpeed> -->
+      <!-- <accelProfile>adaptive</accelProfile> -->
       <tap>yes</tap>
-      <tapButtonMap></tapButtonMap>
-      <tapAndDrag></tapAndDrag>
-      <dragLock>sticky</dragLock>
-      <threeFingerDrag></threeFingerDrag>
-      <middleEmulation></middleEmulation>
-      <disableWhileTyping></disableWhileTyping>
-      <clickMethod></clickMethod>
-      <scrollMethod></scrollMethod>
-      <sendEventsMode></sendEventsMode>
-      <calibrationMatrix></calibrationMatrix>
-      <scrollFactor>1.0</scrollFactor>
+      <!-- <tapButtonMap>lrm</tapButtonMap> -->
+      <!-- <tapAndDrag>yes</tapAndDrag> -->
+      <!-- <dragLock>yes</dragLock> -->
+      <!-- <threeFingerDrag>yes</threeFingerDrag> -->
+      <!-- <middleEmulation>no</middleEmulation> -->
+      <!-- <disableWhileTyping>yes</disableWhileTyping> -->
+      <!-- <clickMethod>buttonAreas</clickMethod> -->
+      <!-- <scrollMethod>twofinger</scrollMethod> -->
+      <!-- <sendEventsMode>yes</sendEventsMode> -->
+      <!-- <calibrationMatrix>1 0 0 0 1 0</calibrationMatrix> -->
+      <scrollFactor>0.2</scrollFactor>
+      <threeFingerDrag>yes</threeFingerDrag>
     </device>
   </libinput>
-
   <!--
     # Window Rules
     #   - Criteria can consist of 'identifier', 'title', 'sandboxEngine' or
@@ -658,8 +689,8 @@
     #     must only apply to the first instance of the window with that
     #     particular 'identifier' or 'title'.
     #   - Matching is case-insensitive and is performed using shell wildcard
-    #     patterns (see glob(7)) so '\*' (not between brackets) matches any string
-    #     and '?' matches any single character.
+    #     patterns (see glob(7)) so '\*' (not between brackets) matches any
+    #     string and '?' matches any single character.
 
     <windowRules>
       <windowRule identifier="*"><action name="Maximize"/></windowRule>
@@ -691,12 +722,10 @@
       </windowRule>
     </windowRules>
   -->
-
   <menu>
     <ignoreButtonReleasePeriod>250</ignoreButtonReleasePeriod>
     <showIcons>yes</showIcons>
   </menu>
-
   <!--
     Magnifier settings
     'width' sets the width in pixels of the magnifier window.
@@ -712,7 +741,6 @@
     <height>400</height>
     <initScale>2.0</initScale>
     <increment>0.2</increment>
-    <useFilter>true</useFilter>
+    <useFilter>yes</useFilter>
   </magnifier>
-
 </labwc_config>
