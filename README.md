@@ -88,21 +88,27 @@ git clone https://github.com/Shnku/.dot_files.git
 cd .dot_files
 ```
 
-## Openbox Setup
+## LabWC Setup
 
-Openbox-session is configured with lxde/lxqt desktop base. Also possible with other distros- fedora(it was my previous setup), debian, arch. Just packages names may varies.
+labwc-session can be also based on lxqt/lxde or xfce based on your choice. Also possible with other distros- fedora(it was my previous setup), debian, arch. Just packages names may varies.
 
 ```bash
 # this packages are must; 
 git polybar openbox rofi plank picom dunst fastfetch copyq  conky brightnessctl 
-# general purpose;
+
+#for wayland plank does not work, no polybar 
+# no compositor like picom needed also 
+waybar azote
+
+# general purpose xfce/lxqtrelated apps;
 qterminal lxpolkit lxqt-powermanagement pcmanfm obconf flameshot exa bat zsh nitrogen
 
 # install them with apt/dnf/pacman/yay
 ```
 
-- **`polybar`** as statusbar (panel/top-bar) and **`plank`** dock  with **`rofi`** search
-- **`picom`** for compositing
+- **`waybar`** as statusbar (panel/top-bar) and **no plank dock works.  
+- **`rofi`** search works , but also `fzf` is there
+- for compositing handled by labwc, labwc-tweaks for gui configuration 
 - **`dunst`** as notification daemon
 - **`copyq`** as clipboard
 - **`conky`** as desktop system moniter
@@ -114,11 +120,11 @@ For needed apps *(this apps are mentioned in config, if other alternative used, 
 - `exa` and `bat` as alternate to `ls` and `cat` command
 - `zsh` as default POSH shell
 - `lxqt-powermanagement` (default in lxde/lxqt) or `xfce4-power-manager` can be use in case of laptop.
-- `nitrogen` for wallpaper changing utility
+- `nitrogen` not works on wayland use `azote`
 
 Other general recommendations for full fludge desktop experience ..  
 
-- `flameshot` as screenshot utility
+- `flameshot` as screenshot utility required some extra config for wayland
 - `qimgv` as image viewer
 - `qpdfview` as pdf viewer supports tabs
 - `qalculate` as calculator provider
@@ -133,12 +139,7 @@ For theming, (newer system uses qt6 generally)
 Alternatively you can use `xfce4-appearance-settings` or other xfce related things.
 
 ```bash
-# Get openbox themes from these links.
-git clone https://github.com/reorr/my-theme-collection.git;
-mv -v my-theme-collection/* ~/.themes/;
-git clone https://github.com/addy-dclxvi/openbox-theme-collections.git;
-mv -v openbox-theme-collections/* ~/.themes/
-
+# Get openbox themes from these links. 
 # gtk theme
 git clone https://github.com/addy-dclxvi/gtk-theme-collections.git;
 mv -v gtk-theme-collections/* ~/.local/share/themes/
@@ -149,8 +150,8 @@ mv -v gtk-theme-collections/* ~/.local/share/themes/
 ```bash
 mkdir -p ~/.config/openbox;
 ln -s $PWD/.dot_files/openbox ~/.config/openbox;
-mkdir -p ~/.config/polybar;
-ln -s $pwd/.dot_files/polybar ~/.config/polybar;
+mkdir -p ~/.config/waybar;
+ln -s $pwd/.dot_files/waybar ~/.config/waybar;
 mkdir -p ~/.config/rofi;
 ln -s $pwd/.dot_files/rofi ~/.config/rofi;
 mkdir -p ~/.config/picom;
@@ -277,17 +278,4 @@ echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.profile
 
 **Tap to click** not work even if selected via lxqt-mouse settings ... so need to do this :
 
-```bash
-sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf
-# add these ..
-```
-
-```bash
-Section "InputClass"
-        Identifier "libinput touchpad catchall"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-        Option "Tapping" "on" #this line 
-EndSection
-```
+**Not needed in wayland**
