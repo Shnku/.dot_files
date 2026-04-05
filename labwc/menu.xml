@@ -1,83 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <openbox_menu>
-<!-- Note: for localization support of menu items "client-menu" has to be removed here -->
-<menu id="client-menu">
-  <item label="Minimize">
-    <action name="Iconify" />
-  </item>
-  <item label="Maximize">
-    <action name="ToggleMaximize" />
-  </item>
-  <item label="Fullscreen">
-    <action name="ToggleFullscreen" />
-  </item>
-  <item label="Roll Up/Down">
-    <action name="ToggleShade" />
-  </item>
-  <item label="Decorations">
-    <action name="ToggleDecorations" />
-  </item>
-  <item label="Always on Top">
-    <action name="ToggleAlwaysOnTop" />
-  </item>
-  <!--
-    Any menu with the id "workspaces" will be hidden
-    if there is only a single workspace available.
-  -->
-  <menu id="client-send-to-menu"/>
-  <!--
-    openbox default workspace selector
-    to use replace above workspace menu with the example below
-    the label is required, but you can change the text.
-
-    <menu id="client-send-to-menu" label="Send to..." />
-  -->
-  <item label="Close">
-    <action name="Close" />
-  </item>
-</menu>
-
-<menu id="root-menu">
-  <!-- Make client-list-combined-menu a submenu of root-menu
-       You must supply a label or it will not appear in root-menu -->
-  <!--
-  <menu id="client-list-combined-menu" label="Running..." />
-  -->
+<menu id="root-menu" label="root-menu">
+  <menu id="Accessories" label="Accessories">
+    <item label="Azote" icon="azote">
+      <action name="Execute"><command>azote</command></action>
+    </item>
+    <item label="Bulk Rename" icon="org.xfce.thunar">
+      <action name="Execute"><command>thunar --bulk-rename</command></action>
+    </item>
+    <item label="CopyQ" icon="copyq">
+      <action name="Execute"><command>copyq --start-server show</command></action>
+    </item>
+    <item label="Disks" icon="org.gnome.DiskUtility">
+      <action name="Execute"><command>gnome-disks</command></action>
+    </item>
+    <item label="File Manager" icon="org.xfce.filemanager">
+      <action name="Execute"><command>exo-open --launch FileManager</command></action>
+    </item>
+    <item label="FreeTube" icon="io.freetubeapp.FreeTube">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/run.sh --file-forwarding io.freetubeapp.FreeTube @@u  @@</command></action>
+    </item>
+    <item label="Gammastep Indicator" icon="gammastep">
+      <action name="Execute"><command>gammastep-indicator</command></action>
+    </item>
+    <item label="nitrogen" icon="nitrogen">
+      <action name="Execute"><command>nitrogen</command></action>
+    </item>
+    <item label="Plank" icon="plank">
+      <action name="Execute"><command>plank</command></action>
+    </item>
+    <item label="scrcpy" icon="scrcpy">
+      <action name="Execute"><command>/bin/sh -c "\$SHELL -i -c scrcpy"</command></action>
+    </item>
+    <item label="scrcpy (console)" icon="scrcpy">
+      <action name="Execute"><command>/bin/sh -c "\$SHELL -i -c 'scrcpy --pause-on-exit=if-error'"</command></action>
+    </item>
+    <item label="Terminal Emulator" icon="org.xfce.terminalemulator">
+      <action name="Execute"><command>exo-open --launch TerminalEmulator</command></action>
+    </item>
+    <item label="Thunar File Manager" icon="org.xfce.thunar">
+      <action name="Execute"><command>thunar</command></action>
+    </item>
+    <item label="Xarchiver" icon="xarchiver">
+      <action name="Execute"><command>xarchiver</command></action>
+    </item>
+  </menu> <!-- Accessories -->
+  <menu id="Development" label="Development">
+    <item label="Geany" icon="geany">
+      <action name="Execute"><command>geany</command></action>
+    </item>
+    <item label="Gitg" icon="org.gnome.gitg">
+      <action name="Execute"><command>gitg --no-wd</command></action>
+    </item>
+    <item label="VSCodium" icon="vscodium">
+      <action name="Execute"><command>/usr/share/codium/codium</command></action>
+    </item>
+  </menu> <!-- Development -->
+  <menu id="Graphics" label="Graphics">
+    <item label="Flameshot" icon="org.flameshot.Flameshot">
+      <action name="Execute"><command>flameshot</command></action>
+    </item>
+    <item label="nomacs" icon="org.nomacs.ImageLounge">
+      <action name="Execute"><command>nomacs</command></action>
+    </item>
+    <item label="Rnote" icon="com.github.flxzt.rnote">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=rnote --file-forwarding com.github.flxzt.rnote @@  @@</command></action>
+    </item>
+  </menu> <!-- Graphics -->
+  <menu id="Internet" label="Internet">
+    <item label="AnyDesk" icon="com.anydesk.Anydesk">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=anydesk --file-forwarding com.anydesk.Anydesk @@u  @@</command></action>
+    </item>
+    <item label="Chromium Web Browser" icon="chromium-browser">
+      <action name="Execute"><command>/usr/bin/chromium-browser</command></action>
+    </item>
+    <item label="FireDragon" icon="org.garudalinux.firedragon">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/lib/firedragon/firedragon --file-forwarding org.garudalinux.firedragon @@u  @@</command></action>
+    </item>
+    <item label="FreeTube" icon="io.freetubeapp.FreeTube">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/run.sh --file-forwarding io.freetubeapp.FreeTube @@u  @@</command></action>
+    </item>
+    <item label="KDE Connect" icon="kdeconnect">
+      <action name="Execute"><command>kdeconnect-app</command></action>
+    </item>
+    <item label="KDE Connect Indicator" icon="kdeconnect">
+      <action name="Execute"><command>kdeconnect-indicator</command></action>
+    </item>
+    <item label="KDE Connect SMS" icon="kdeconnect">
+      <action name="Execute"><command>kdeconnect-sms</command></action>
+    </item>
+    <item label="Mail Reader" icon="org.xfce.mailreader">
+      <action name="Execute"><command>exo-open --launch MailReader</command></action>
+    </item>
+    <item label="Start Syncthing" icon="syncthing">
+      <action name="Execute"><command>syncthing serve --no-browser --logfile=default</command></action>
+    </item>
+    <item label="Syncthing Web UI" icon="syncthing">
+      <action name="Execute"><command>syncthing --browser-only</command></action>
+    </item>
+    <item label="Tor Browser" icon="org.torproject.torbrowser-launcher">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=torbrowser-launcher --file-forwarding org.torproject.torbrowser-launcher @@u  @@</command></action>
+    </item>
+    <item label="Tor Browser Launcher Settings" icon="org.torproject.torbrowser-launcher">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=torbrowser-launcher org.torproject.torbrowser-launcher --settings</command></action>
+    </item>
+    <item label="Web Browser" icon="org.xfce.webbrowser">
+      <action name="Execute"><command>exo-open --launch WebBrowser</command></action>
+    </item>
+    <item label="Wireshark" icon="org.wireshark.Wireshark">
+      <action name="Execute"><command>/usr/bin/wireshark</command></action>
+    </item>
+  </menu> <!-- Internet -->
+  <menu id="Multimedia" label="Multimedia">
+    <item label="FreeTube" icon="io.freetubeapp.FreeTube">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/run.sh --file-forwarding io.freetubeapp.FreeTube @@u  @@</command></action>
+    </item>
+    <item label="mpv Media Player" icon="mpv">
+      <action name="Execute"><command>mpv --player-operation-mode=pseudo-gui --</command></action>
+    </item>
+    <item label="OBS Studio" icon="com.obsproject.Studio">
+      <action name="Execute"><command>obs</command></action>
+    </item>
+    <item label="Volume Control" icon="multimedia-volume-control">
+      <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+  </menu> <!-- Multimedia -->
+  <menu id="Office" label="Office">
+    <item label="Obsidian" icon="md.obsidian.Obsidian">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=obsidian.sh --file-forwarding md.obsidian.Obsidian @@u  @@</command></action>
+    </item>
+    <item label="ONLYOFFICE" icon="org.onlyoffice.desktopeditors">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=desktopeditors --file-forwarding org.onlyoffice.desktopeditors @@u  @@</command></action>
+    </item>
+    <item label="P3X-OneNote" icon="com.patrikx3.onenote">
+      <action name="Execute"><command>/usr/bin/flatpak run --branch=master --arch=x86_64 --command=electron-wrapper --file-forwarding com.patrikx3.onenote @@u  @@</command></action>
+    </item>
+    <item label="qpdfview (Qt6)" icon="qpdfview">
+      <action name="Execute"><command>qpdfview-qt6 --unique</command></action>
+    </item>
+  </menu> <!-- Office -->
+  <menu id="Settings" label="Settings">
+    <item label="Accessibility" icon="org.xfce.settings.accessibility">
+      <action name="Execute"><command>xfce4-accessibility-settings</command></action>
+    </item>
+    <item label="Appearance" icon="org.xfce.settings.appearance">
+      <action name="Execute"><command>xfce4-appearance-settings</command></action>
+    </item>
+    <item label="Azote" icon="azote">
+      <action name="Execute"><command>azote</command></action>
+    </item>
+    <item label="Bluetooth Adapters" icon="blueman-device">
+      <action name="Execute"><command>blueman-adapters</command></action>
+    </item>
+    <item label="Bluetooth Manager" icon="blueman">
+      <action name="Execute"><command>blueman-manager</command></action>
+    </item>
+    <item label="Color Profiles" icon="org.xfce.settings.color">
+      <action name="Execute"><command>xfce4-color-settings</command></action>
+    </item>
+    <item label="Customize Look and Feel" icon="preferences-desktop-theme">
+      <action name="Execute"><command>lxappearance</command></action>
+    </item>
+    <item label="Default Applications" icon="org.xfce.settings.default-applications">
+      <action name="Execute"><command>xfce4-mime-settings</command></action>
+    </item>
+    <item label="Default applications for LXSession" icon="preferences-desktop">
+      <action name="Execute"><command>lxsession-default-apps</command></action>
+    </item>
+    <item label="Display" icon="org.xfce.settings.display">
+      <action name="Execute"><command>xfce4-display-settings</command></action>
+    </item>
+    <item label="Input Method Selector" icon="im-chooser">
+      <action name="Execute"><command>im-chooser</command></action>
+    </item>
+    <item label="Input Method Selector" icon="im-chooser">
+      <action name="Execute"><command>xfce4-im-chooser</command></action>
+    </item>
+    <item label="Keyboard" icon="org.xfce.settings.keyboard">
+      <action name="Execute"><command>xfce4-keyboard-settings</command></action>
+    </item>
+    <item label="Labwc Tweaks" icon="labwc_tweaks">
+      <action name="Execute"><command>labwc-tweaks</command></action>
+    </item>
+    <item label="Language" icon="preferences-desktop-locale">
+      <action name="Execute"><command>/usr/bin/system-config-language</command></action>
+    </item>
+    <item label="Mouse and Touchpad" icon="org.xfce.settings.mouse">
+      <action name="Execute"><command>xfce4-mouse-settings</command></action>
+    </item>
+    <item label="nitrogen" icon="nitrogen">
+      <action name="Execute"><command>nitrogen</command></action>
+    </item>
+    <item label="Openbox Configuration Manager" icon="obconf">
+      <action name="Execute"><command>obconf</command></action>
+    </item>
+    <item label="OpenTabletDriver" icon="otd">
+      <action name="Execute"><command>otd-gui</command></action>
+    </item>
+    <item label="Panel" icon="org.xfce.panel">
+      <action name="Execute"><command>xfce4-panel --preferences</command></action>
+    </item>
+    <item label="Power Manager" icon="org.xfce.powermanager">
+      <action name="Execute"><command>xfce4-power-manager-settings</command></action>
+    </item>
+    <item label="Qt6 Settings" icon="preferences-desktop-theme">
+      <action name="Execute"><command>qt6ct</command></action>
+    </item>
+    <item label="SDDM Configuration" icon="preferences-system">
+      <action name="Execute"><command>sddm-conf</command></action>
+    </item>
+    <item label="Settings Editor" icon="org.xfce.settings.editor">
+      <action name="Execute"><command>xfce4-settings-editor</command></action>
+    </item>
+    <item label="Settings Manager" icon="org.xfce.settings.manager">
+      <action name="Execute"><command>xfce4-settings-manager</command></action>
+    </item>
+    <item label="Thunar Preferences" icon="org.xfce.thunar">
+      <action name="Execute"><command>thunar-settings</command></action>
+    </item>
+    <item label="Volume Control" icon="multimedia-volume-control">
+      <action name="Execute"><command>pavucontrol</command></action>
+    </item>
+    <item label="XScreenSaver" icon="xscreensaver">
+      <action name="Execute"><command>xscreensaver</command></action>
+    </item>
+    <item label="XScreenSaver Settings" icon="xscreensaver">
+      <action name="Execute"><command>xscreensaver-settings</command></action>
+    </item>
+  </menu> <!-- Settings -->
+  <menu id="System" label="System">
+    <item label="Accessibility" icon="org.xfce.settings.accessibility">
+      <action name="Execute"><command>xfce4-accessibility-settings</command></action>
+    </item>
+    <item label="conky" icon="conky-logomark-violet">
+      <action name="Execute"><command>conky --daemonize --pause=1</command></action>
+    </item>
+    <item label="dconf Editor" icon="ca.desrt.dconf-editor">
+      <action name="Execute"><command>dconf-editor</command></action>
+    </item>
+    <item label="Default Applications" icon="org.xfce.settings.default-applications">
+      <action name="Execute"><command>xfce4-mime-settings</command></action>
+    </item>
+    <item label="GParted" icon="gparted">
+      <action name="Execute"><command>/usr/bin/gparted</command></action>
+    </item>
+    <item label="Language" icon="preferences-desktop-locale">
+      <action name="Execute"><command>/usr/bin/system-config-language</command></action>
+    </item>
+    <item label="Problem Reporting" icon="org.freedesktop.GnomeAbrt">
+      <action name="Execute"><command>gnome-abrt</command></action>
+    </item>
+    <item label="QTerminal" icon="utilities-terminal">
+      <action name="Execute"><command>qterminal</command></action>
+    </item>
+    <item label="QTerminal Drop-down" icon="utilities-terminal">
+      <action name="Execute"><command>qterminal --drop</command></action>
+    </item>
+    <item label="ranger" icon="utilities-terminal">
+      <action name="Execute"><command>ranger</command></action>
+    </item>
+    <item label="SDDM Configuration" icon="preferences-system">
+      <action name="Execute"><command>sddm-conf</command></action>
+    </item>
+    <item label="SELinux Troubleshooter" icon="setroubleshoot_icon">
+      <action name="Execute"><command>/usr/bin/sealert -b</command></action>
+    </item>
+    <item label="Task Manager" icon="org.xfce.taskmanager">
+      <action name="Execute"><command>xfce4-taskmanager</command></action>
+    </item>
+    <item label="Thunar File Manager" icon="org.xfce.thunar">
+      <action name="Execute"><command>thunar</command></action>
+    </item>
+    <item label="XScreenSaver Settings" icon="xscreensaver">
+      <action name="Execute"><command>xscreensaver-settings</command></action>
+    </item>
+    <item label="XTerm" icon="xterm-color">
+      <action name="Execute"><command>xterm</command></action>
+    </item>
+  </menu> <!-- System -->
+  <menu id="Other" label="Other">
+    <item label="Rofi" icon="rofi">
+      <action name="Execute"><command>rofi -show</command></action>
+    </item>
+    <item label="Rofi Theme Selector" icon="rofi">
+      <action name="Execute"><command>rofi-theme-selector</command></action>
+    </item>
+  </menu> <!-- Other -->
+  <separator />
   <item label="Terminal">
     <action name="Execute" command="lab-sensible-terminal" />
   </item>
-  <separator />
   <item label="Reconfigure">
     <action name="Reconfigure" />
   </item>
   <item label="Exit">
     <action name="Exit" />
   </item>
-  <!--
-  # A prompt can be used as follows:
-  <item label="Exit">
-    <action name="If">
-      <prompt message="Do you really want to exit the compositor?"/>
-      <then>
-        <action name="Exit"/>
-      </then>
-    </action>
-  </item>
-  -->
-</menu>
-
-<menu id="some-custom-menu">
-  <!--
-    Creates menu title.
-    To create an empty header with no text,
-    set label=" ", not label=""
-  -->
-  <separator label="custom menu" />
-  <item label="Reconfigure">
-    <action name="Reconfigure" />
-  </item>
-  <item label="Exit">
-    <action name="Exit" />
-  </item>
-</menu>
-
+</menu> <!-- root-menu -->
 </openbox_menu>
