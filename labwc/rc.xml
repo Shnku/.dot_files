@@ -257,8 +257,7 @@
           the same application as the currently focused window. Default is "all". 
     -->
     <keybind key="A-Tab">
-     <!-- <action name="NextWindow" workspace="all" output="all" identifier="all"/> -->
-      <action name="NextWindow" />
+      <action name="NextWindow" workspace="all" output="all" identifier="all"/>
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow" workspace="all" output="all" identifier="all"/>
@@ -371,7 +370,7 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="W-Return">
+    <keybind key="W-T">
       <action name="Execute" command="qterminal"/>
     </keybind>
     <keybind key="W-Space">
