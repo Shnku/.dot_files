@@ -6,7 +6,7 @@
 This repository is for storing my configuration files, dotfiles, and other custom settings for my Linux desktop environments.  
 ~~**My current setup features [Openbox](https://en.wikipedia.org/wiki/Openbox) Window Manager on [BOSS ***(Bharat Operating System Solutions)*** GNU/Linux](https://bosslinux.in/).** But possible to setup each component manually. Checkout the [Set-Up guide](#setting-up)~~
 
-For Wayland Adaptation Switched to **Fedora 44** as BOSS 10 packages are old and wayland is indda bleeding edge. It features desktop setup with [LabWC](https://github.com/labwc/labwc), as a standalone wayland compositor like Openbox
+For Wayland Adaptation Switched to **Fedora 44** as BOSS 10 packages are old and wayland is kindda bleeding edge. It features desktop setup with [LabWC](https://github.com/labwc/labwc), as a standalone wayland compositor like Openbox
 
 [![License](https://img.shields.io/github/license/Shnku/.dot_files?style=flat-square&logo=gnu&color=2B3137&labelColor=161B22)](https://github.com/Shnku/.dot_files/blob/main/LICENSE)
 
@@ -47,8 +47,10 @@ Here is the screenshot showcasing my **current** desktop environment and setup:
 ![screenshot wayland](/screenshot/wayland.png)
 
 <details>
-  <summary>OpenBox(X11) setup on BOSS Linux </summary>
+  <summary>OpenBox(X11) setup on BOSS Linux </summary>  
+  
 ![screenshot](/screenshot/2025-12-08_17-29.png)
+  
 </details>
 
 Other and Old Screeshots
