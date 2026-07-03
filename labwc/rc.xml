@@ -77,11 +77,11 @@
   </theme>
   <!-- window related  -->
   <windowSwitcher preview="yes" outlines="yes" unshade="yes">
-    <osd show="yes" style="classic" output="all" thumbnailLabelFormat="%T"/>
+    <osd show="yes" style="classic" output="all" thumbnailLabelFormat="%T" />
     <fields>
-      <field content="icon" width="5%"/>
-      <field content="desktop_entry_name" width="30%"/>
-      <field content="title" width="65%"/>
+      <field content="icon" width="5%" />
+      <field content="desktop_entry_name" width="30%" />
+      <field content="title" width="65%" />
       <!--
         Just as for window-rules, you can use 'identifier' or
         'trimmed_identifier' to show the app_id for native wayland clients or
@@ -156,10 +156,10 @@
   </focus>
   <snapping>
     <!-- Set inner and outer range to 0 to disable window snapping completely -->
-    <range inner="10" outer="10"/>
+    <range inner="10" outer="10" />
     <cornerRange>50</cornerRange>
     <overlay enabled="yes">
-      <delay inner="500" outer="500"/>
+      <delay inner="500" outer="500" />
     </overlay>
     <topMaximize>yes</topMaximize>
     <notifyClient>always</notifyClient>
@@ -257,111 +257,111 @@
           the same application as the currently focused window. Default is "all". 
     -->
     <keybind key="A-Tab">
-      <action name="NextWindow" workspace="all" output="all" identifier="all"/>
+      <action name="NextWindow" workspace="all" output="all" identifier="all" />
     </keybind>
     <keybind key="A-S-Tab">
-      <action name="PreviousWindow" workspace="all" output="all" identifier="all"/>
+      <action name="PreviousWindow" workspace="all" output="all" identifier="all" />
     </keybind>
     <keybind key="W-Escape">
-      <action name="Iconify"/>
+      <action name="Iconify" />
     </keybind>
     <keybind key="A-S-d">
-      <action name="ToggleDecorations"/>
+      <action name="ToggleDecorations" />
     </keybind>
     <keybind key="A-F4">
-      <action name="Close"/>
+      <action name="Close" />
     </keybind>
     <keybind key="W-a">
-      <action name="ToggleMaximize"/>
+      <action name="ToggleMaximize" />
     </keybind>
     <keybind key="W-Left">
-      <action name="SnapToEdge" direction="left" combine="yes"/>
+      <action name="SnapToEdge" direction="left" combine="yes" />
     </keybind>
     <keybind key="W-Right">
-      <action name="SnapToEdge" direction="right" combine="yes"/>
+      <action name="SnapToEdge" direction="right" combine="yes" />
     </keybind>
     <keybind key="W-Up">
-      <action name="SnapToEdge" direction="up" combine="yes"/>
+      <action name="SnapToEdge" direction="up" combine="yes" />
     </keybind>
     <keybind key="W-Down">
-      <action name="SnapToEdge" direction="down" combine="yes"/>
+      <action name="SnapToEdge" direction="down" combine="yes" />
     </keybind>
     <keybind key="A-Space">
-      <action name="ShowMenu" menu="client-menu" atCursor="no"/>
+      <action name="ShowMenu" menu="client-menu" atCursor="no" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
-      <action name="Execute" command="amixer sset Master 5%-"/>
+      <action name="Execute" command="amixer sset Master 5%-" />
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
-      <action name="Execute" command="amixer sset Master 5%+"/>
+      <action name="Execute" command="amixer sset Master 5%+" />
     </keybind>
     <keybind key="XF86_AudioMute">
-      <action name="Execute" command="amixer sset Master toggle"/>
+      <action name="Execute" command="amixer sset Master toggle" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="brightnessctl set +10%"/>
+      <action name="Execute" command="brightnessctl set +10%" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set 10%-"/>
+      <action name="Execute" command="brightnessctl set 10%-" />
     </keybind>
     <!-- Media Controls -->
     <keybind key="XF86AudioStop">
-      <action name="Execute" command="mpc stop"/>
+      <action name="Execute" command="mpc stop" />
     </keybind>
     <keybind key="XF86AudioPlay">
-      <action name="Execute" command="mpc toogle"/>
+      <action name="Execute" command="mpc toogle" />
     </keybind>
     <keybind key="XF86AudioPrev">
-      <action name="Execute" command="mpc prev"/>
+      <action name="Execute" command="mpc prev" />
     </keybind>
     <keybind key="XF86AudioNext">
-      <action name="Execute" command="mpc next"/>
+      <action name="Execute" command="mpc next" />
     </keybind>
     <!-- keybing for workspace switching -->
     <keybind key="W-1">
-      <action name="GoToDesktop" to="1"/>
+      <action name="GoToDesktop" to="1" />
     </keybind>
     <keybind key="W-2">
-      <action name="GoToDesktop" to="2"/>
+      <action name="GoToDesktop" to="2" />
     </keybind>
     <keybind key="W-3">
-      <action name="GoToDesktop" to="3"/>
+      <action name="GoToDesktop" to="3" />
     </keybind>
     <keybind key="W-4">
-      <action name="GoToDesktop" to="4"/>
+      <action name="GoToDesktop" to="4" />
     </keybind>
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
-      <action name="Close"/>
+      <action name="Close" />
     </keybind>
     <keybind key="W-q">
-      <action name="Close"/>
+      <action name="Close" />
     </keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="Super_L" onRelease="yes">
-      <action name="Execute" command="rofi -show drun"/>
+      <action name="Execute" command="rofi -show drun" />
     </keybind>
     <!-- Action : SendToDesktop -->
     <keybind key="W-S-Right">
-      <action name="SendToDesktop" to="right" follow="yes" wrap="yes"/>
+      <action name="SendToDesktop" to="right" follow="yes" wrap="yes" />
     </keybind>
     <keybind key="W-S-Left">
-      <action name="SendToDesktop" to="left" follow="yes" wrap="yes"/>
+      <action name="SendToDesktop" to="left" follow="yes" wrap="yes" />
     </keybind>
     <keybind key="S-W-1">
-      <action name="SendToDesktop" to="1" follow="no" wrap="yes"/>
+      <action name="SendToDesktop" to="1" follow="no" wrap="yes" />
     </keybind>
     <keybind key="S-W-2">
-      <action name="SendToDesktop" to="2" follow="no" wrap="yes"/>
+      <action name="SendToDesktop" to="2" follow="no" wrap="yes" />
     </keybind>
     <keybind key="S-W-3">
-      <action name="SendToDesktop" to="3" follow="no" wrap="yes"/>
+      <action name="SendToDesktop" to="3" follow="no" wrap="yes" />
     </keybind>
     <keybind key="S-W-4">
-      <action name="SendToDesktop" to="4" follow="no" wrap="yes"/>
+      <action name="SendToDesktop" to="4" follow="no" wrap="yes" />
     </keybind>
     <keybind key="S-W-5">
-      <action name="SendToDesktop" to="5" follow="no" wrap="yes"/>
+      <action name="SendToDesktop" to="5" follow="no" wrap="yes" />
     </keybind>
     <!-- launch rofi -->
     <keybind key="A-space">
@@ -371,10 +371,13 @@
     </keybind>
     <!-- Keybindings for running applications -->
     <keybind key="W-T">
-      <action name="Execute" command="qterminal"/>
+      <action name="Execute" command="qterminal" />
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute" command="qterminal -d" />
     </keybind>
     <keybind key="W-Space">
-      <action name="Execute" command="fuzzel"/>
+      <action name="Execute" command="fuzzel" />
     </keybind>
     <!-- toggle clipboard copyq -->
     <keybind key="W-v">
@@ -443,136 +446,136 @@
     <doubleClickTime>500</doubleClickTime>
     <context name="Frame">
       <mousebind button="W-Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
       <mousebind button="W-Left" action="Drag">
-        <action name="Move"/>
+        <action name="Move" />
       </mousebind>
       <mousebind button="W-Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
       <mousebind button="W-Right" action="Drag">
-        <action name="Resize"/>
+        <action name="Resize" />
       </mousebind>
     </context>
     <context name="Border">
       <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
       <mousebind button="Left" action="Drag">
-        <action name="Resize"/>
+        <action name="Resize" />
       </mousebind>
     </context>
     <context name="TitleBar">
       <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
       <mousebind direction="Up" action="Scroll">
-        <action name="Unshade"/>
-        <action name="Focus"/>
+        <action name="Unshade" />
+        <action name="Focus" />
       </mousebind>
       <mousebind direction="Down" action="Scroll">
-        <action name="Unfocus"/>
-        <action name="Shade"/>
+        <action name="Unfocus" />
+        <action name="Shade" />
       </mousebind>
     </context>
     <context name="Title">
       <mousebind button="Left" action="Drag">
-        <action name="Move"/>
+        <action name="Move" />
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximize" />
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="ShowMenu" menu="client-menu"/>
+        <action name="ShowMenu" menu="client-menu" />
       </mousebind>
     </context>
     <context name="Maximize">
       <mousebind button="Left" action="Click">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximize" />
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="ToggleMaximize" direction="horizontal"/>
+        <action name="ToggleMaximize" direction="horizontal" />
       </mousebind>
       <mousebind button="Middle" action="Click">
-        <action name="ToggleMaximize" direction="vertical"/>
+        <action name="ToggleMaximize" direction="vertical" />
       </mousebind>
     </context>
     <context name="WindowMenu">
       <mousebind button="Left" action="Click">
-        <action name="ShowMenu" menu="client-menu" atCursor="no"/>
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="ShowMenu" menu="client-menu" atCursor="no"/>
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
       </mousebind>
     </context>
     <context name="Icon">
       <mousebind button="Left" action="Click">
-        <action name="ShowMenu" menu="client-menu" atCursor="no"/>
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="ShowMenu" menu="client-menu" atCursor="no"/>
+        <action name="ShowMenu" menu="client-menu" atCursor="no" />
       </mousebind>
     </context>
     <context name="Shade">
       <mousebind button="Left" action="Click">
-        <action name="ToggleShade"/>
+        <action name="ToggleShade" />
       </mousebind>
     </context>
     <context name="AllDesktops">
       <mousebind button="Left" action="Click">
-        <action name="ToggleOmnipresent"/>
+        <action name="ToggleOmnipresent" />
       </mousebind>
     </context>
     <context name="Iconify">
       <mousebind button="Left" action="Click">
-        <action name="Iconify"/>
+        <action name="Iconify" />
       </mousebind>
     </context>
     <context name="Close">
       <mousebind button="Left" action="Click">
-        <action name="Close"/>
+        <action name="Close" />
       </mousebind>
     </context>
     <context name="Client">
       <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
       <mousebind button="Middle" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
       <mousebind button="Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
+        <action name="Focus" />
+        <action name="Raise" />
       </mousebind>
     </context>
     <context name="Root">
       <mousebind button="Left" action="Press">
-        <action name="ShowMenu" menu="root-menu"/>
+        <action name="ShowMenu" menu="root-menu" />
       </mousebind>
       <mousebind button="Right" action="Press">
-        <action name="ShowMenu" menu="root-menu"/>
+        <action name="ShowMenu" menu="root-menu" />
       </mousebind>
       <mousebind button="Middle" action="Press">
-        <action name="ShowMenu" menu="root-menu"/>
+        <action name="ShowMenu" menu="root-menu" />
         <!-- openbox default, swap with above line to activate -->
         <!-- <action name="ShowMenu" menu="client-list-combined-menu" /> -->
       </mousebind>
       <mousebind direction="Up" action="Scroll">
-        <action name="GoToDesktop" to="left" wrap="yes"/>
+        <action name="GoToDesktop" to="left" wrap="yes" />
       </mousebind>
       <mousebind direction="Down" action="Scroll">
-        <action name="GoToDesktop" to="right" wrap="yes"/>
+        <action name="GoToDesktop" to="right" wrap="yes" />
       </mousebind>
     </context>
   </mouse>
@@ -622,10 +625,10 @@
   <tablet rotate="0" mouseEmulation="no">
     <!-- <mapToOutput>HDMI-A-1</mapToOutput> -->
     <!-- Active area dimensions are in mm -->
-    <area top="0.0" left="0.0" width="0.0" height="0.0"/>
-    <map button="Tip" to="Left"/>
-    <map button="Stylus" to="Right"/>
-    <map button="Stylus2" to="Middle"/>
+    <area top="0.0" left="0.0" width="0.0" height="0.0" />
+    <map button="Tip" to="Left" />
+    <map button="Stylus" to="Right" />
+    <map button="Stylus2" to="Middle" />
   </tablet>
   <!--
     All tablet tools, except of type mouse and lens, use absolute
@@ -635,7 +638,7 @@
     a value lower than 1.0 decreases the speed, using a value greater than
     1.0 increases the speed of the cursor.
   -->
-  <tabletTool motion="absolute" relativeMotionSensitivity="1.0"/>
+  <tabletTool motion="absolute" relativeMotionSensitivity="1.0" />
   <!--
     The *category* attribute is optional and can be set to touch, touchpad,
     non-touch, default or the name of a device. You can obtain device names by

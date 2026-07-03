@@ -1,5 +1,5 @@
 # Example autostart file
-
+systemctl --user --no-block start labwc-session.target
 # Set background color.
 # swaybg -c '#113344' >/dev/null 2>&1 &
 # using Azote for wallpaper, the config script stored at ~/.azotebg
@@ -46,7 +46,7 @@ blueman-applet &
 #clipboard manager..
 copyq &
 #open tablet driver..
-# otd-daemon &
+#otd-daemon &
 ## ------------------------------------
 
 # Lock screen after 5 minutes; turn off display after another 5 minutes.
