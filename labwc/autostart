@@ -56,12 +56,13 @@ copyq &
 # `wlr-randr --output <whatever> --off` because this re-arranges windows
 # (since a837fef). Instead use a wlr-output-power-management client such as
 # https://git.sr.ht/~leon_plickat/wlopm
-#swayidle -w \
-#	timeout 300 'swaylock -f -c 000000' \
-#	timeout 600 'wlopm --off \*' \
-#	resume 'wlopm --on \*' \
-#	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
-
 swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
-    timeout 400 'systemctl suspend' 
+	timeout 300 'sh -c ~/.config/swaylock/create_lock_bg_from_wall.sh; swaylock -f' \
+	timeout 400 'wlopm --off \*' \
+	timeout 401 'systemctl suspend' \
+	resume 'wlopm --on \*' \
+	before-sleep 'sh -c ~/.config/swaylock/create_lock_bg_from_wall.sh; swaylock -f' > /dev/null 2>&1 &
+
+#swayidle -w \
+#    timeout 300 'swaylock -f -c 000000' \
+#    timeout 400 'systemctl suspend' 
