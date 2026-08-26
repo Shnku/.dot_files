@@ -299,10 +299,10 @@
       <action name="Execute" command="amixer sset Master toggle" />
     </keybind>
     <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute" command="brightnessctl set +10%" />
+      <action name="Execute" command="brightnessctl set +3%" />
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute" command="brightnessctl set 10%-" />
+      <action name="Execute" command="brightnessctl set 3%-" />
     </keybind>
     <!-- Media Controls -->
     <keybind key="XF86AudioStop">
@@ -387,6 +387,19 @@
           <name>copyq</name>
         </startupnotify>
         <command>copyq toggle</command>
+      </action>
+    </keybind>
+    <!-- toggle wayscriber layout -->
+    <keybind key="W-d">
+      <action name="Execute" command="wayscriber --daemon-toggle" />
+    </keybind>
+    <!-- take screenshot Print Scr -->
+    <!-- grim -g $(slurp -d) -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>
+          sh -c ~/.config/labwc/screenshot.sh
+        </command>
       </action>
     </keybind>
     <!-- SnapToRegion via W-Numpad -->
